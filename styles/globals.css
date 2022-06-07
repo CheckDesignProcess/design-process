@@ -1,9 +1,29 @@
+@font-face {
+  font-family: "AvenirBook";
+  src: url("/fonts/AvenirLTStd-Book.otf");
+}
+@font-face {
+  font-family: "AvenirMedium";
+  src: url("/fonts/AvenirLTStd-Medium.otf");
+}
+@font-face {
+  font-family: "AvenirRoman";
+  src: url("/fonts/AvenirLTStd-Roman.otf");
+}
+@font-face {
+  font-family: "AvenirHeavy";
+  src: url("/fonts/Avenir-Heavy.otf");
+}
+@font-face {
+  font-family: "AvenirBlack";
+  src: url("../public/fonts/AvenirLTStd-Black.otf");
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -13,4 +33,22 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: AvenirRoman;
+}
+
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
 }
