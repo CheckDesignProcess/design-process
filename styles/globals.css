@@ -34,6 +34,7 @@ a {
 * {
   box-sizing: border-box;
   font-family: AvenirRoman;
+  font-weight: 400;
 }
 
 textarea:hover,
