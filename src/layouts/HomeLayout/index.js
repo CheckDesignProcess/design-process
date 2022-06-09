@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 import TopNav from "../../components/TopNav";
 import { Button, Badge } from "react-bootstrap";
 
@@ -14,7 +15,7 @@ export default function HomeLayout() {
           <div className="col-md">
             <TopNav />
 
-            <main>
+            <main className="col-md-7">
               <header>
                 <div className="mb-md-2">Product Design Process Checklist</div>
                 <p>
@@ -26,7 +27,12 @@ export default function HomeLayout() {
               <div className="page-content">
                 <div className="title">What are you designing for?</div>
                 <div className="product product-border-bottom">
-                  <div className="head mb-2">A new product</div>
+                  <div
+                    className="head mb-2"
+                    onClick={() => Router.push("/new-product")}
+                  >
+                    A new product
+                  </div>
                   <div className="content mb-2">
                     A holistic curation of product design processes for your
                     every day product building and process validation

@@ -5,10 +5,17 @@ export const HomeContainer = styled.div`
   background: #1b1b1b;
   min-height: 100vh;
   height: auto;
+  .progress {
+    background-color: #565656;
+    height: 0.5px;
+  }
+  .progress-bar {
+    background-color: #ffac32;
+  }
   main {
-    width: 824px;
+    /* width: 824px; */
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 80px;
     margin-bottom: 100px;
     @media ${device.tablet} {
       width: auto;
