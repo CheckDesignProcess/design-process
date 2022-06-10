@@ -2,6 +2,12 @@ import styled from "styled-components";
 import { device } from "../../utils/device";
 
 export const StyledNav = styled.div`
+  .hamburger-icon {
+    display: none;
+    @media ${device.tablet} {
+      display: block;
+    }
+  }
   .container {
     @media ${device.tablet} {
       padding-left: 0px;
@@ -10,7 +16,7 @@ export const StyledNav = styled.div`
     .navbar-brand {
       svg {
         @media ${device.tablet} {
-          width: 157px;
+          width: 160px;
         }
       }
     }

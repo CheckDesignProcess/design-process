@@ -1,11 +1,13 @@
 import React from "react";
 import Router from "next/router";
-import TopNav from "../../components/TopNav";
 import { Button, Badge } from "react-bootstrap";
+
+//components
+import TopNav from "../../components/TopNav";
+import FooterNav from "../../components/Footer";
 
 //styles
 import { HomeContainer } from "./styles";
-import FooterNav from "../../components/Footer";
 
 export default function HomeLayout() {
   return (

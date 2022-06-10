@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../utils/device";
 
-export const StyledNewProduct = styled.div`
+export const StyledTestSolution = styled.div`
   background: #1b1b1b;
   min-height: 100vh;
   height: auto;
@@ -157,6 +157,8 @@ export const StyledNewProduct = styled.div`
           font-weight: 500;
           font-size: 24px;
           padding-top: 3px;
+          text-align: left;
+          line-height: 24px;
           @media ${device.tablet} {
             font-size: 18px;
             text-align: left;
@@ -175,6 +177,12 @@ export const StyledNewProduct = styled.div`
           padding-top: 15px;
           font-size: 14px;
           width: 100%;
+        }
+      }
+      .collapse-text-mobile {
+        padding-top: 20px;
+        @media ${device.tablet} {
+          padding-top: 28px;
         }
       }
       .collapse-text-bottom {

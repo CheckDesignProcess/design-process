@@ -10,10 +10,10 @@ import TopNav from "../../components/TopNav";
 import Juxebox from "../../components/Juxebox";
 
 //styles and images
-import { StyledNewProduct } from "./styles";
+import { StyledTestSolution } from "./styles";
 import { Bulb, ChevronBottom, ChevronTop } from "../../img/file";
 
-export default function NewProduct() {
+export default function TestSolutionLayout() {
   const [openProcess, setOpenProcess] = useState(false);
   const [openNote, setOpenNote] = useState(false);
   const [openFirstCheck, setOpenFirstCheck] = useState(false);
@@ -28,7 +28,7 @@ export default function NewProduct() {
   };
 
   return (
-    <StyledNewProduct>
+    <StyledTestSolution>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md">
@@ -84,11 +84,8 @@ export default function NewProduct() {
               </header>
 
               <div className="content-page">
-                <div className="gather d-none d-lg-block ps-2 mb-1">
-                  1. Gather requirements (Product, User, Market)
-                </div>
-                <div className="gather gather-mobile ps-2 mb-1">
-                  1. Gather requirements
+                <div className="gather  ps-2 mb-1">
+                  5. Test the Solution (New Product)
                 </div>
 
                 <div className="number mb-2">1 out of 6</div>
@@ -113,10 +110,9 @@ export default function NewProduct() {
                   <Collapse in={openNote}>
                     <div className="collapse-text" id="example-collapse-text">
                       <div>
-                        By approaching requirements gathering holistically as
-                        above, you will be able to uncover quality insights that
-                        will help inform your next design process and design
-                        decisions at a later time.
+                        At this point, you are going to have a full product
+                        (maybe an MVP) depending on your objective at the
+                        initial stage of the product process.
                       </div>
                     </div>
                   </Collapse>
@@ -138,8 +134,7 @@ export default function NewProduct() {
                         <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                           <div className="d-flex align-items-center">
                             <div className="process-title">
-                              Empathize with the target users of the product in
-                              question
+                              Test the product, iterate and refine
                             </div>
                           </div>
                           <div>
@@ -152,10 +147,10 @@ export default function NewProduct() {
                           className="collapse-text collapse-text-bottom"
                           id="example-collapse-text"
                         >
-                          At this point, you want to identify the user&apos;s
-                          pain points, needs, wants, and the problems that
-                          underlie the development of the particular product you
-                          are trying to work on.
+                          The solutions are implemented within the prototypes,
+                          and, one by one, they are investigated and either
+                          accepted, improved, and re-examined or rejected on the
+                          basis of the users&apos; experiences.
                         </div>
                       </Collapse>
                     </div>
@@ -177,8 +172,7 @@ export default function NewProduct() {
                         <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                           <div className="d-flex align-items-center">
                             <div className="process-title">
-                              Identify the methods you want to use to gather
-                              requirements
+                              Test the prototype interaction internally
                             </div>
                           </div>
                           <div>
@@ -191,14 +185,8 @@ export default function NewProduct() {
                           className="collapse-text"
                           id="example-collapse-text"
                         >
-                          What method is most suitable for you to gather
-                          requirements for the product you are working on?
-                          <br />
-                          Ask yourself questions like &quot;what do I want to
-                          uncover after this research?&quot;
-                          <br />
-                          What method of research will help me uncover these
-                          insights?
+                          Have yourself/team use the prototype to uncover
+                          design/functionality issues
                         </div>
                       </Collapse>
                     </div>
@@ -220,7 +208,8 @@ export default function NewProduct() {
                         <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                           <div className="d-flex align-items-center">
                             <div className="process-title">
-                              Identify and select the explicit research needs
+                              Test the prototype interaction with the target
+                              users/representative users
                             </div>
                           </div>
                           <div>
@@ -233,13 +222,9 @@ export default function NewProduct() {
                           className="collapse-text"
                           id="example-collapse-text"
                         >
-                          What are your three wishes for intelligence about your
-                          users, competitors, the marketplace? etc <br />
-                          Imagine the most useful, actionable research results
-                          possible. What would they tell you?
-                          <br />
-                          How would you use them? Recruit/source for the right
-                          research personas.
+                          Have the target users/representative users use the
+                          prototype to get their feedback and ensure the
+                          solution sits well with the target users.
                         </div>
                       </Collapse>
                     </div>
@@ -261,8 +246,8 @@ export default function NewProduct() {
                         <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                           <div className="d-flex align-items-center">
                             <div className="process-title">
-                              Do a quick inventory of what data is currently
-                              available
+                              Refine the product to address all the feedback
+                              gotten from the previous step
                             </div>
                           </div>
                           <div>
@@ -272,17 +257,12 @@ export default function NewProduct() {
                       </Button>
                       <Collapse in={openFourthCheck}>
                         <div
-                          className="collapse-text"
+                          className="collapse-text collapse-text-mobile"
                           id="example-collapse-text"
                         >
-                          What research initiatives have been carried out before
-                          now? Maybe by the product owners
-                          <br />
-                          What have you learned from these current research
-                          findings if any?
-                          <br />
-                          What kinds of research efforts have been most/least
-                          valuable to this product endeavours in the past? Why?
+                          Use the feedback gotten from the target users to
+                          improve the UX and UI of the product and test again if
+                          the solution is optimally improved.
                         </div>
                       </Collapse>
                     </div>
@@ -303,9 +283,7 @@ export default function NewProduct() {
                       >
                         <div className="d-flex align-items-center justify-content-between">
                           <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Identify and select your research deliverables
-                            </div>
+                            <div className="process-title">Hand-off</div>
                           </div>
                           <div>
                             {openFifthCheck ? ChevronTop : ChevronBottom}
@@ -317,10 +295,12 @@ export default function NewProduct() {
                           className="collapse-text"
                           id="example-collapse-text"
                         >
-                          What results are you expecting after the research?
+                          Prepare the developer handoff
                           <br />
-                          e.g Survey entries, interview recordings, affinity
-                          maps
+                          Make assets accessible.
+                          <br />
+                          Create a style guide or components library for
+                          developers.
                         </div>
                       </Collapse>
                     </div>
@@ -341,9 +321,7 @@ export default function NewProduct() {
                       >
                         <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                           <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Identify and select the impact of the research
-                            </div>
+                            <div className="process-title">Keep iterating</div>
                           </div>
                           <div>
                             {openSixthCheck ? ChevronTop : ChevronBottom}
@@ -355,10 +333,9 @@ export default function NewProduct() {
                           className="collapse-text"
                           id="example-collapse-text"
                         >
-                          What will you do with the research results?
-                          <br />
-                          When is the latest date I can deliver results that
-                          will still be useful?
+                          UX is never complete, at intervals, carry out
+                          benchmark studies to uncover new trends /feedback from
+                          the customers after the product launch.
                         </div>
                       </Collapse>
                     </div>
@@ -366,17 +343,17 @@ export default function NewProduct() {
                 </Form>
 
                 <div className="next-wrapper mt-md-5">
-                  <div className="d-flex justify-content-end">
+                  <div className="d-flex justify-content-start">
                     <div
                       className="next"
-                      onClick={() => Router.push("/define-problem")}
+                      onClick={() => Router.push("/prototype-solution")}
                     >
-                      Next
+                      Previous
                     </div>
                   </div>
-                  <div className="text-end">
+                  <div className="text-start">
                     <div className="note">
-                      Define the problem (the need for the New Product)
+                      Prototype the Solution (New Product)
                     </div>
                   </div>
                 </div>
@@ -390,6 +367,6 @@ export default function NewProduct() {
           </div>
         </div>
       </div>
-    </StyledNewProduct>
+    </StyledTestSolution>
   );
 }

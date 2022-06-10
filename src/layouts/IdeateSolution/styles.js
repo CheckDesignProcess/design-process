@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../utils/device";
 
-export const StyledNewProduct = styled.div`
+export const StyledIdeateSolution = styled.div`
   background: #1b1b1b;
   min-height: 100vh;
   height: auto;
@@ -161,6 +161,7 @@ export const StyledNewProduct = styled.div`
             font-size: 18px;
             text-align: left;
             line-height: 20px;
+            padding-right: 10px;
           }
         }
       }

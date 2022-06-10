@@ -4,7 +4,7 @@ import { device } from "../../utils/device";
 export const StyledFooter = styled.div`
   footer {
     border-top: 0.5px solid #565656;
-    padding-top: 38px;
+    padding-top: 30px;
     padding-bottom: 66px;
     @media ${device.tablet} {
       border-top: none;

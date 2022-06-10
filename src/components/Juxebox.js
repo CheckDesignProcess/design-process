@@ -1,11 +1,22 @@
 import Image from "next/image";
 import styled from "styled-components";
+import { device } from "../utils/device";
 
 const StyledJuxebox = styled.div`
   .juxebox {
     position: absolute;
     right: -75px;
     top: -95px;
+    @media ${device.tablet} {
+      right: 0px;
+      top: 4px;
+    }
+    img {
+      @media ${device.tablet} {
+        width: 87px !important;
+        height: 93px !important;
+      }
+    }
   }
 `;
 

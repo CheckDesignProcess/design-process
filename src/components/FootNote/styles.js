@@ -24,6 +24,15 @@ export const StyledFootNote = styled.div`
           font-size: 18px;
           font-family: AvenirHeavy;
           padding-top: 3px;
+          @media ${device.tablet} {
+            font-size: 14px;
+          }
+        }
+        .process-title-mobile {
+          display: none;
+          @media ${device.tablet} {
+            display: block;
+          }
         }
       }
       .collapse-text {
@@ -33,6 +42,10 @@ export const StyledFootNote = styled.div`
         width: 95%;
         padding-bottom: 18px;
         padding-top: 2px;
+        @media ${device.tablet} {
+          width: 100%;
+          font-size: 14px;
+        }
       }
     }
   }

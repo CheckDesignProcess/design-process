@@ -1,36 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 import {
   Container,
-  Offcanvas,
   Nav,
   Button,
   Form,
-  NavDropdown,
   FormControl,
   Navbar,
   InputGroup,
 } from "react-bootstrap";
 
+//components
+import MobileNav from "../MobileNav";
+
 //styles and images
 import { StyledNav } from "./styles";
-import { BrandLogo } from "../../img/file";
+import { BrandLogo, HamburgerIcon } from "../../img/file";
 
 export default function TopNav() {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <StyledNav>
       <Navbar expand="lg">
         <Container>
           <Navbar.Brand href="/">{BrandLogo}</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <span className="hamburger-icon" onClick={handleShow}>
+            {HamburgerIcon}
+          </span>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/" className="mx-md-5">
-                Home
-              </Nav.Link>
-              <Nav.Link href="/about" className="me-md-5">
-                About
-              </Nav.Link>
-              <Nav.Link href="/share">Share</Nav.Link>
+              <Link href="/">
+                <a className="nav-link mx-md-5">Home</a>
+              </Link>
+              <Link href="/about">
+                <a className="nav-link me-md-5">About</a>
+              </Link>
+              <Link href="/share">
+                <a className="nav-link">Share</a>
+              </Link>
             </Nav>
             <div className="d-flex align-items-center">
               <InputGroup className="">
@@ -47,6 +58,8 @@ export default function TopNav() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      <MobileNav show={show} handleClose={handleClose} />
     </StyledNav>
   );
 }

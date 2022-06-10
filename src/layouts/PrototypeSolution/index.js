@@ -10,25 +10,22 @@ import TopNav from "../../components/TopNav";
 import Juxebox from "../../components/Juxebox";
 
 //styles and images
-import { StyledNewProduct } from "./styles";
+import { StyledPrototype } from "./styles";
 import { Bulb, ChevronBottom, ChevronTop } from "../../img/file";
 
-export default function NewProduct() {
+export default function PrototypeSolutionLayout() {
   const [openProcess, setOpenProcess] = useState(false);
   const [openNote, setOpenNote] = useState(false);
   const [openFirstCheck, setOpenFirstCheck] = useState(false);
   const [openSecondCheck, setOpenSecondCheck] = useState(false);
   const [openThirdCheck, setOpenThirdCheck] = useState(false);
-  const [openFourthCheck, setOpenFourthCheck] = useState(false);
-  const [openFifthCheck, setOpenFifthCheck] = useState(false);
-  const [openSixthCheck, setOpenSixthCheck] = useState(false);
 
   const handleFirstCheck = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
 
   return (
-    <StyledNewProduct>
+    <StyledPrototype>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md">
@@ -84,14 +81,11 @@ export default function NewProduct() {
               </header>
 
               <div className="content-page">
-                <div className="gather d-none d-lg-block ps-2 mb-1">
-                  1. Gather requirements (Product, User, Market)
-                </div>
-                <div className="gather gather-mobile ps-2 mb-1">
-                  1. Gather requirements
+                <div className="gather ps-2 mb-1">
+                  4. Prototype the Solution (New Product)
                 </div>
 
-                <div className="number mb-2">1 out of 6</div>
+                <div className="number mb-2">0 out of 3</div>
                 <ProgressBar now={16.6} />
                 <div className="question mt-3 mb-4">What you need to do</div>
                 <div className="collapse-section">
@@ -113,10 +107,9 @@ export default function NewProduct() {
                   <Collapse in={openNote}>
                     <div className="collapse-text" id="example-collapse-text">
                       <div>
-                        By approaching requirements gathering holistically as
-                        above, you will be able to uncover quality insights that
-                        will help inform your next design process and design
-                        decisions at a later time.
+                        At this point, you are going to have a full product
+                        (maybe an MVP) depending on your objective at the
+                        initial stage of the product process.
                       </div>
                     </div>
                   </Collapse>
@@ -138,8 +131,7 @@ export default function NewProduct() {
                         <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                           <div className="d-flex align-items-center">
                             <div className="process-title">
-                              Empathize with the target users of the product in
-                              question
+                              Prototype the UI
                             </div>
                           </div>
                           <div>
@@ -152,10 +144,11 @@ export default function NewProduct() {
                           className="collapse-text collapse-text-bottom"
                           id="example-collapse-text"
                         >
-                          At this point, you want to identify the user&apos;s
-                          pain points, needs, wants, and the problems that
-                          underlie the development of the particular product you
-                          are trying to work on.
+                          A prototype is a draft version of a product that
+                          allows you to explore your ideas and show the
+                          intention behind a feature or the overall design
+                          concept to users before investing time and money into
+                          development.
                         </div>
                       </Collapse>
                     </div>
@@ -177,8 +170,9 @@ export default function NewProduct() {
                         <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                           <div className="d-flex align-items-center">
                             <div className="process-title">
-                              Identify the methods you want to use to gather
-                              requirements
+                              Design the high fidelity UIs of the product
+                              covering the features that completes the
+                              product/solution
                             </div>
                           </div>
                           <div>
@@ -188,17 +182,13 @@ export default function NewProduct() {
                       </Button>
                       <Collapse in={openSecondCheck}>
                         <div
-                          className="collapse-text"
+                          className="collapse-text collapse-text-mobile"
                           id="example-collapse-text"
                         >
-                          What method is most suitable for you to gather
-                          requirements for the product you are working on?
-                          <br />
-                          Ask yourself questions like &quot;what do I want to
-                          uncover after this research?&quot;
-                          <br />
-                          What method of research will help me uncover these
-                          insights?
+                          Produce a number of inexpensive, scaled-down versions
+                          of the product or specific features within the
+                          product, so they can investigate the problem solutions
+                          generated in the previous stage.
                         </div>
                       </Collapse>
                     </div>
@@ -220,7 +210,8 @@ export default function NewProduct() {
                         <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                           <div className="d-flex align-items-center">
                             <div className="process-title">
-                              Identify and select the explicit research needs
+                              Prototype the UI using any prototyping
+                              (interaction design) tool
                             </div>
                           </div>
                           <div>
@@ -233,132 +224,11 @@ export default function NewProduct() {
                           className="collapse-text"
                           id="example-collapse-text"
                         >
-                          What are your three wishes for intelligence about your
-                          users, competitors, the marketplace? etc <br />
-                          Imagine the most useful, actionable research results
-                          possible. What would they tell you?
-                          <br />
-                          How would you use them? Recruit/source for the right
-                          research personas.
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenFourthCheck(!openFourthCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openFourthCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Do a quick inventory of what data is currently
-                              available
-                            </div>
-                          </div>
-                          <div>
-                            {openFourthCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openFourthCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          What research initiatives have been carried out before
-                          now? Maybe by the product owners
-                          <br />
-                          What have you learned from these current research
-                          findings if any?
-                          <br />
-                          What kinds of research efforts have been most/least
-                          valuable to this product endeavours in the past? Why?
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenFifthCheck(!openFifthCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openFifthCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Identify and select your research deliverables
-                            </div>
-                          </div>
-                          <div>
-                            {openFifthCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openFifthCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          What results are you expecting after the research?
-                          <br />
-                          e.g Survey entries, interview recordings, affinity
-                          maps
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-md-flex align-items-center check-box-pointer check-box-pointer-mobile"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenSixthCheck(!openSixthCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openSixthCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Identify and select the impact of the research
-                            </div>
-                          </div>
-                          <div>
-                            {openSixthCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openSixthCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          What will you do with the research results?
-                          <br />
-                          When is the latest date I can deliver results that
-                          will still be useful?
+                          The aim is to identify the best possible solution for
+                          each of the problems identified during the first three
+                          stages . Imagine the most useful, actionable research
+                          results possible. What did they tell you? How did you
+                          use them?
                         </div>
                       </Collapse>
                     </div>
@@ -366,18 +236,22 @@ export default function NewProduct() {
                 </Form>
 
                 <div className="next-wrapper mt-md-5">
-                  <div className="d-flex justify-content-end">
+                  <div className="d-flex justify-content-between">
                     <div
                       className="next"
-                      onClick={() => Router.push("/define-problem")}
+                      onClick={() => Router.push("/ideate-solution")}
+                    >
+                      Previous
+                    </div>
+                    <div
+                      className="next"
+                      onClick={() => Router.push("/test-solution")}
                     >
                       Next
                     </div>
                   </div>
                   <div className="text-end">
-                    <div className="note">
-                      Define the problem (the need for the New Product)
-                    </div>
+                    <div className="note">Test the Solution (New Product)</div>
                   </div>
                 </div>
               </div>
@@ -390,6 +264,6 @@ export default function NewProduct() {
           </div>
         </div>
       </div>
-    </StyledNewProduct>
+    </StyledPrototype>
   );
 }

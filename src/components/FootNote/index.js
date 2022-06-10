@@ -20,8 +20,11 @@ export default function FootNote() {
             <div className="d-flex align-items-center justify-content-between">
               <div className="d-flex align-items-center">
                 <div className="me-2">{Flag}</div>
-                <div className="process-title">
+                <div className="process-title d-none d-lg-block">
                   Resources you can refer to for this section
+                </div>
+                <div className="process-title process-title-mobile">
+                  Resources
                 </div>
               </div>
               <div>{openProcess ? ChevronTop : ChevronBottom}</div>
