@@ -12,36 +12,38 @@ import { HomeContainer } from "./styles";
 export default function HomeLayout() {
   return (
     <HomeContainer>
+      <TopNav />
       <div className="container-fluid">
         <div className="row">
           <div className="col-md">
-            <TopNav />
-
-            <main className="col-md-7">
+            <main>
               <header>
-                <div className="mb-md-2">Product Design Process Checklist</div>
+                <div className="mb-md-3">Product Design Process Checklist</div>
                 <p>
                   A holistic curation of product design processes for your every
                   day product building and process validation.
                 </p>
-                <Button>Get Started</Button>
+                <Button onClick={() => Router.push("/new-product")}>
+                  Get Started
+                </Button>
               </header>
               <div className="page-content">
                 <div className="title">What are you designing for?</div>
-                <div className="product product-border-bottom">
-                  <div
-                    className="head mb-2"
-                    onClick={() => Router.push("/new-product")}
-                  >
-                    A new product
-                  </div>
+                <div
+                  className="product product-border-bottom"
+                  onClick={() => Router.push("/new-product")}
+                >
+                  <div className="head mb-2">A new product</div>
                   <div className="content mb-2">
                     A holistic curation of product design processes for your
                     every day product building and process validation
                   </div>
                   <div className="number">0 out of 05</div>
                 </div>
-                <div className="product product-border-bottom">
+                <div
+                  className="product product-border-bottom"
+                  onClick={() => Router.push("/existing-product")}
+                >
                   <div className="head mb-2">An existing product</div>
                   <div className="content mb-2">
                     A holistic curation of product design processes for your
@@ -71,11 +73,10 @@ export default function HomeLayout() {
                 </div>
               </div>
             </main>
-
-            <FooterNav />
           </div>
         </div>
       </div>
+      <FooterNav />
     </HomeContainer>
   );
 }

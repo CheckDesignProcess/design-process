@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../utils/device";
 
-export const StyledNewProduct = styled.div`
+export const StyledExistingIdeate = styled.div`
   background: #1b1b1b;
   min-height: 100vh;
   height: auto;
@@ -171,6 +171,7 @@ export const StyledNewProduct = styled.div`
             font-size: 17px;
             text-align: left;
             line-height: 20px;
+            padding-right: 8px;
           }
         }
       }
@@ -180,7 +181,7 @@ export const StyledNewProduct = styled.div`
         font-size: 16px;
         line-height: 22px;
         width: 95%;
-        padding-top: 2px;
+        padding-top: 5px;
         @media ${device.tablet} {
           padding-top: 15px;
           font-size: 14px;
@@ -188,8 +189,7 @@ export const StyledNewProduct = styled.div`
         }
       }
       .collapse-text-bottom {
-        border-bottom: 0.5px solid #2b2b2b;
-        padding-bottom: 18px;
+        padding-top: 20px;
       }
     }
     .progress {

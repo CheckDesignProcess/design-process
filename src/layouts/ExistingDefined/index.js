@@ -4,105 +4,56 @@ import { Button, Collapse, ProgressBar } from "react-bootstrap";
 import { Form, Checkbox } from "antd";
 
 //components
-import FootNote from "../../components/FootNote";
-import FooterNav from "../../components/Footer";
 import TopNav from "../../components/TopNav";
+import FooterNav from "../../components/Footer";
+import FootNote from "../../components/FootNote";
 import Juxebox from "../../components/Juxebox";
 
 //styles and images
-import { StyledIdeateSolution } from "./styles";
+import { StyledExistingDefined } from "./styles";
 import { Bulb, ChevronBottom, ChevronTop } from "../../img/file";
 
 const Questions = [
   {
     id: 1,
-    title: "Carry out ideation and come up with the product",
-    content:
-      "Ideation is the process of generating a broad set of ideas on a given topic with no attempt to judge or evaluate them.",
+    title: "Make sense of your research findings",
+    content: (
+      <div>
+        At this point, you have a problem you want to understand from the
+        user&apos;s shoes and outside of the user&apos;s shoe . You want to
+        analyze and synthesize your research findings/insight to come up with an
+        informed data and metrics to design for the new product . The outcome
+        here will inform your remaining processes.
+      </div>
+    ),
   },
   {
     id: 2,
-    title: "Brainstorm, think",
+    title: "Synthesize your research findings",
     content: (
       <div>
-        <div className="mb-3">
-          Ideation is only one step in the full UX design process; once ideas
-          are generated, separate analysis has to follow to decide which ideas
-          (or parts of ideas) to pursue. The more ideas the better: a broad pool
-          to choose from increases the likelihood that one of the ideas will be
-          the seed for a great design solution.
-        </div>
-        Put into consideration design standards to follow and how to inculcate
-        them inside the product you are building , you can do this in person or
-        in a team
+        What was the key intelligence you seek from the user? Use them in
+        clusters/categories You could explore affinity diagraming to identify
+        trends and patterns . For example; use global tags (for
+        clusters/categories) as follows: goal, need, motivation, painpoint,
+        task, tools.
       </div>
     ),
   },
   {
     id: 3,
-    title: "Check out competitor platforms",
+    title: "Have a debriefing session with yourself or (and) your team",
     content: (
       <div>
-        Carry out site/UI audit for the competitor platforms to identify and
-        validate the user&apos;s already existing mental model, product
-        features, and current design patterns, you don&apos;t want to reinvent
-        the wheel.
-      </div>
-    ),
-  },
-  {
-    id: 4,
-    title: "Design customer journeys, user flows and information architectures",
-    content:
-      "Craft user journeys and user flows to have a clear path to building the product.",
-  },
-  {
-    id: 5,
-    title: "Gather inspiration",
-    content: (
-      <div>
-        Check out UI sites to explore design styles you want to follow?
-        <br />
-        Explore interaction design of products of the same industry.
-        <br />
-        Create a moodboard or style scrape to have a style direction.
-      </div>
-    ),
-  },
-  {
-    id: 6,
-    title: "Make sketches or wireframes",
-    content:
-      "Sketch/wireframe the design appearances and test to confirm every style is serving the goal of the product.",
-  },
-  {
-    id: 7,
-    title: "Test the wireframes/lofi",
-    content:
-      "Confirm and test that the lofi/wireframes/sketch is solving the problem as intended.",
-  },
-  {
-    id: 8,
-    title: "Design the Product (Hifi)",
-    content:
-      "Now is the time to bring your confirmed and data-informed ideas to life.",
-  },
-  {
-    id: 9,
-    title: "Carry out copy review",
-    content: (
-      <div>
-        Work on the UX writing.
-        <br />
-        Review the UI copy with yourself or your team. Simulate how it is going
-        to sound to the potential, representative target users. pay attention to
-        the tone, the language etc
+        This will help bring to light the valuable insights you must have missed
+        Get/uncover other ideas . Identify feasibility issues and way forward
+        Agree on a direction to take.
       </div>
     ),
   },
 ];
 
-export default function IdeateSolutionLayout() {
+export default function ExistingDefinedLayout() {
   const [openProcess, setOpenProcess] = useState(true);
   const [openNote, setOpenNote] = useState(true);
   const [openFirstCheck, setOpenFirstCheck] = useState(false);
@@ -126,19 +77,13 @@ export default function IdeateSolutionLayout() {
 
   useEffect(() => {
     if (checkList.length == 0) setStep(0);
-    if (checkList.length == 1) setStep(11.1);
-    if (checkList.length == 2) setStep(22.2);
-    if (checkList.length == 3) setStep(33.3);
-    if (checkList.length == 4) setStep(44.4);
-    if (checkList.length == 5) setStep(55.5);
-    if (checkList.length == 6) setStep(66.6);
-    if (checkList.length == 7) setStep(77.7);
-    if (checkList.length == 8) setStep(88.8);
-    if (checkList.length == 9) setStep(100);
+    if (checkList.length == 1) setStep(33.3);
+    if (checkList.length == 2) setStep(66.6);
+    if (checkList.length == 3) setStep(100);
   }, [checkList.length]);
 
   return (
-    <StyledIdeateSolution>
+    <StyledExistingDefined>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md">
@@ -148,15 +93,16 @@ export default function IdeateSolutionLayout() {
               <Juxebox />
               <header className="mb-5">
                 <div className="title mb-3">What are you designing for?</div>
-                <div className="product">A New Product</div>
+                <div className="product">An Existing Product</div>
                 <div className="takeaway mb-4">
-                  Key takeaways that identify a new product
+                  Key takeaways that identify a existing product
                 </div>
                 <div className="product-list mb-5 pb-5">
                   <div>
-                    - It hasn&apos;t already been built by your product owners
+                    - It hasn&apos;t already been built by your product owners.
                   </div>
-                  <div>- Might have existing competitors or not</div>
+                  <div>- Might have existing competitors.</div>
+                  <div>- Have existing competitors.</div>
                 </div>
                 <div className="collapse-section">
                   <Button
@@ -176,17 +122,16 @@ export default function IdeateSolutionLayout() {
                   </Button>
                   <Collapse in={openProcess}>
                     <div className="collapse-text" id="example-collapse-text">
-                      <div className="mb-2">
-                        The processes used to design a new product might vary or
-                        are believed to vary depending on the kind of product
-                        one wants to design and the goal one seeks to achieve at
-                        the end of designing the product.
+                      <div className="mb-3">
+                        The processes used to design an existing product might
+                        vary or are believed to vary depending on the kind of
+                        product one wants to design and the goal one seeks to
+                        achieve at the end of designing the product.
                       </div>
                       <div>
-                        These procesesses are better used when one needs to
-                        solve problems that meets their use cases considering
-                        the goal and motivation of the supposed problem in
-                        question.
+                        Here, you are considering either improving the existing
+                        product or you are looking to add additional features to
+                        the product, or revamping the whole product.
                       </div>
                     </div>
                   </Collapse>
@@ -195,14 +140,14 @@ export default function IdeateSolutionLayout() {
 
               <div className="content-page">
                 <div className="gather ps-2 mb-1">
-                  3. Ideate and Design Solution (New Product)
+                  2. Define Problem (The need for the New Product)
                 </div>
 
                 <div className="number mb-2">
                   <span className={checkList.length > 0 && "number-color"}>
                     {checkList.length}
                   </span>{" "}
-                  out of 9
+                  out of 3
                 </div>
                 <ProgressBar now={step} />
                 <div className="question mt-3 mb-4">What you need to do</div>
@@ -225,8 +170,10 @@ export default function IdeateSolutionLayout() {
                   <Collapse in={openNote}>
                     <div className="collapse-text" id="example-collapse-text">
                       <div>
-                        Know that after this process, you have pre-designed the
-                        solution/product.
+                        This step might not be necessary for scenarios where you
+                        have product managers to draft the requirements or where
+                        you know the product owners have properly identify and
+                        defined the problem.
                       </div>
                     </div>
                   </Collapse>
@@ -249,7 +196,6 @@ export default function IdeateSolutionLayout() {
                         <Button
                           onClick={() => handleCollapseButton(el.id)}
                           aria-controls="example-collapse-text"
-                          aria-expanded={openFirstCheck}
                         >
                           <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
                             <div className="d-flex align-items-center">
@@ -264,11 +210,7 @@ export default function IdeateSolutionLayout() {
                         </Button>
                         <Collapse in={openFirstCheck[el.id]}>
                           <div
-                            className={
-                              el.id == 4
-                                ? "collapse-text collapse-text-bottom"
-                                : "collapse-text"
-                            }
+                            className="collapse-text"
                             id="example-collapse-text"
                           >
                             {el.content}
@@ -283,20 +225,20 @@ export default function IdeateSolutionLayout() {
                   <div className="d-flex justify-content-between">
                     <div
                       className="next"
-                      onClick={() => Router.push("/define-problem")}
+                      onClick={() => Router.push("/existing-product")}
                     >
                       Previous
                     </div>
                     <div
                       className="next"
-                      onClick={() => Router.push("/prototype-solution")}
+                      onClick={() => Router.push("/existing-ideate-solution")}
                     >
                       Next
                     </div>
                   </div>
                   <div className="text-end">
                     <div className="note">
-                      Prototype the Solution (New Product)
+                      Ideate and Design Solution (New Product)
                     </div>
                   </div>
                 </div>
@@ -310,6 +252,6 @@ export default function IdeateSolutionLayout() {
         </div>
       </div>
       <FooterNav />
-    </StyledIdeateSolution>
+    </StyledExistingDefined>
   );
 }

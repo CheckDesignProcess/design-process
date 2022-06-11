@@ -1,5 +1,6 @@
 import React from "react";
 import { Offcanvas } from "react-bootstrap";
+import Link from "next/link";
 
 //styles
 import { StyledMobileNav } from "./styles";
@@ -12,6 +13,23 @@ export default function MobileNav({ show, handleClose }) {
         <div className="header d-flex justify-content-between align-items-center">
           <div className="brand-logo">{BrandLogo}</div>
           <div onClick={handleClose}>{CloseImage}</div>
+        </div>
+        <div className="nav-links-wrapper">
+          <div>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </div>
+          <div className="my-5">
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </div>
+          <div>
+            <Link href="/share">
+              <a>Share</a>
+            </Link>
+          </div>
         </div>
       </StyledMobileNav>
     </Offcanvas>

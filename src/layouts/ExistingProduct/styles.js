@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../utils/device";
 
-export const StyledNewProduct = styled.div`
+export const StyledExistingProduct = styled.div`
   background: #1b1b1b;
   min-height: 100vh;
   height: auto;

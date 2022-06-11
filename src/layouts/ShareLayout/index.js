@@ -11,12 +11,11 @@ import { StyledShareLayout } from "./styles";
 export default function ShareLayout() {
   return (
     <StyledShareLayout>
+      <TopNav />
       <div className="container-fluid" style={{ position: "relative" }}>
         <div className="row">
           <div className="col-md">
-            <TopNav />
-
-            <main className="col-md-6">
+            <main>
               <header>Share your progress</header>
               <div className="page-content">
                 <p>
@@ -32,13 +31,13 @@ export default function ShareLayout() {
                 <Button className="mt-2">Coming Soon</Button>
               </div>
             </main>
-
-            <div className="footer-share-position">
-              <FooterNav />
-            </div>
           </div>
         </div>
       </div>
+      {/* <div className="footer-share-position">
+        <FooterNav />
+      </div> */}
+      <FooterNav />
     </StyledShareLayout>
   );
 }

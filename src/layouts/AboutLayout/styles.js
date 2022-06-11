@@ -8,17 +8,21 @@ export const StyledAbout = styled.div`
 
   main {
     margin: 0 auto;
-    margin-top: 100px;
+    width: 600px;
+    margin-top: 200px;
     margin-bottom: 220px;
     @media ${device.tablet} {
-      margin-top: 75px;
+      margin-top: 140px;
       margin-bottom: 48px;
+      width: auto;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     header {
       color: #bdbdbd;
       font-weight: 600;
-      font-size: 48px;
+      font-size: 42px;
       font-family: AvenirHeavy;
       margin-bottom: 15px;
       @media ${device.tablet} {
@@ -28,7 +32,7 @@ export const StyledAbout = styled.div`
     .page-content {
       p {
         font-weight: 400;
-        font-size: 24px;
+        font-size: 20px;
         color: #828282;
         font-family: AvenirBook;
         text-align: justify;

@@ -2,23 +2,42 @@ import styled from "styled-components";
 import { device } from "../../utils/device";
 
 export const StyledNav = styled.div`
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    left: 0px;
+    z-index: 1030;
+    padding-left: 36px;
+    padding-right: 36px;
+    @media ${device.tablet} {
+      padding-left: 10px;
+      padding-right: 25px;
+    }
+  }
+  nav {
+    @media ${device.tablet} {
+      background: #1b1b1b;
+    }
+  }
+
   .hamburger-icon {
     display: none;
     @media ${device.tablet} {
       display: block;
     }
   }
+  .navbar-brand {
+    svg {
+      @media ${device.tablet} {
+        width: 220px;
+      }
+    }
+  }
   .container {
     @media ${device.tablet} {
       padding-left: 0px;
       padding-right: 0px;
-    }
-    .navbar-brand {
-      svg {
-        @media ${device.tablet} {
-          width: 160px;
-        }
-      }
     }
   }
   .navbar-nav {
@@ -32,6 +51,10 @@ export const StyledNav = styled.div`
         color: #f7f7f7;
       }
     }
+  }
+
+  a {
+    color: #f7f7f7 !important;
   }
 
   .input-group {

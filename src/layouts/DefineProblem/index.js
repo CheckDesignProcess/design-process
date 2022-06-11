@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Router from "next/router";
 import { Button, Collapse, ProgressBar } from "react-bootstrap";
 import { Form, Checkbox } from "antd";
@@ -13,16 +13,74 @@ import Juxebox from "../../components/Juxebox";
 import { StyledDefinedProblem } from "./styles";
 import { Bulb, ChevronBottom, ChevronTop } from "../../img/file";
 
-export default function DefineProblemLayout() {
-  const [openProcess, setOpenProcess] = useState(false);
-  const [openNote, setOpenNote] = useState(false);
-  const [openFirstCheck, setOpenFirstCheck] = useState(false);
-  const [openSecondCheck, setOpenSecondCheck] = useState(false);
-  const [openThirdCheck, setOpenThirdCheck] = useState(false);
+const Questions = [
+  {
+    id: 1,
+    title: "Make sense of your research findings",
+    content: (
+      <div>
+        At this point, you have a problem you want to understand from the
+        user&apos;s shoes and outside of the user&apos;s shoe . You want to
+        analyze and synthesize your research findings/insight to come up with an
+        informed data and metrics to design for the new product . The outcome
+        here will inform your remaining processes.
+      </div>
+    ),
+  },
+  {
+    id: 2,
+    title: "Synthesize your research findings",
+    content: (
+      <div>
+        What was the key intelligence you seek from the user? Use them in
+        clusters/categories You could explore affinity diagraming to identify
+        trends and patterns . For example; use global tags (for
+        clusters/categories) as follows: goal, need, motivation, painpoint,
+        task, tools.
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    title: "Have a debriefing session with yourself or (and) your team",
+    content: (
+      <div>
+        This will help bring to light the valuable insights you must have missed
+        Get/uncover other ideas . Identify feasibility issues and way forward
+        Agree on a direction to take.
+      </div>
+    ),
+  },
+];
 
-  const handleFirstCheck = (e) => {
-    console.log(`checked = ${e.target.checked}`);
+export default function DefineProblemLayout() {
+  const [openProcess, setOpenProcess] = useState(true);
+  const [openNote, setOpenNote] = useState(true);
+  const [openFirstCheck, setOpenFirstCheck] = useState(false);
+  const [state, setState] = useState(true);
+  const [checkList, setCheckList] = useState([]);
+  const [step, setStep] = useState(0);
+
+  const handleCollapseButton = (id) => {
+    setOpenFirstCheck((prevCheck) => ({ ...prevCheck, [id]: !prevCheck[id] }));
+    setState((prevState) => !prevState);
   };
+
+  const handleCheckbox = (e, id) => {
+    if (checkList.includes(id)) {
+      const filteredIds = checkList.filter((selectedId) => selectedId !== id);
+      setCheckList(filteredIds);
+    } else {
+      setCheckList([...checkList, id]);
+    }
+  };
+
+  useEffect(() => {
+    if (checkList.length == 0) setStep(0);
+    if (checkList.length == 1) setStep(33.3);
+    if (checkList.length == 2) setStep(66.6);
+    if (checkList.length == 3) setStep(100);
+  }, [checkList.length]);
 
   return (
     <StyledDefinedProblem>
@@ -39,7 +97,7 @@ export default function DefineProblemLayout() {
                 <div className="takeaway mb-4">
                   Key takeaways that identify a new product
                 </div>
-                <div className="product-list mb-5">
+                <div className="product-list mb-5 pb-5">
                   <div>
                     - It hasn&apos;t already been built by your product owners
                   </div>
@@ -47,7 +105,7 @@ export default function DefineProblemLayout() {
                 </div>
                 <div className="collapse-section">
                   <Button
-                    onClick={() => setOpenProcess(!openProcess)}
+                    // onClick={() => setOpenProcess(!openProcess)}
                     aria-controls="example-collapse-text"
                     aria-expanded={openProcess}
                   >
@@ -58,7 +116,7 @@ export default function DefineProblemLayout() {
                           Processes to design a new product
                         </div>
                       </div>
-                      <div>{openProcess ? ChevronTop : ChevronBottom}</div>
+                      {/* <div>{openProcess ? ChevronTop : ChevronBottom}</div> */}
                     </div>
                   </Button>
                   <Collapse in={openProcess}>
@@ -85,12 +143,17 @@ export default function DefineProblemLayout() {
                   2. Define Problem (The need for the New Product)
                 </div>
 
-                <div className="number mb-2">0 out of 3</div>
-                <ProgressBar now={16.6} />
+                <div className="number mb-2">
+                  <span className={checkList.length > 0 && "number-color"}>
+                    {checkList.length}
+                  </span>{" "}
+                  out of 3
+                </div>
+                <ProgressBar now={step} />
                 <div className="question mt-3 mb-4">What you need to do</div>
                 <div className="collapse-section">
                   <Button
-                    onClick={() => setOpenNote(!openNote)}
+                    // onClick={() => setOpenNote(!openNote)}
                     aria-controls="example-collapse-text"
                     aria-expanded={openNote}
                   >
@@ -101,7 +164,7 @@ export default function DefineProblemLayout() {
                           Quick Note
                         </div>
                       </div>
-                      <div>{openNote ? ChevronTop : ChevronBottom}</div>
+                      {/* <div>{openNote ? ChevronTop : ChevronBottom}</div> */}
                     </div>
                   </Button>
                   <Collapse in={openNote}>
@@ -115,126 +178,47 @@ export default function DefineProblemLayout() {
                     </div>
                   </Collapse>
                 </div>
+
                 <Form className="mt-md-5 pt-md-3">
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenFirstCheck(!openFirstCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openFirstCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Make sense of your research findings
+                  {Questions.map((el) => (
+                    <div
+                      key={el.id}
+                      className="d-flex align-items-center check-box-pointer"
+                      style={{ position: "relative" }}
+                    >
+                      <div className="check-wrapper">
+                        <Checkbox
+                          onChange={(e) => handleCheckbox(e, el.id)}
+                          checked={checkList.includes(el.id)}
+                        ></Checkbox>
+                      </div>
+                      <div className="collapse-form-section">
+                        <Button
+                          onClick={() => handleCollapseButton(el.id)}
+                          aria-controls="example-collapse-text"
+                        >
+                          <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
+                            <div className="d-flex align-items-center">
+                              <div className="process-title">{el.title}</div>
+                            </div>
+                            <div>
+                              {openFirstCheck[el.id]
+                                ? ChevronTop
+                                : ChevronBottom}
                             </div>
                           </div>
-                          <div>
-                            {openFirstCheck ? ChevronTop : ChevronBottom}
+                        </Button>
+                        <Collapse in={openFirstCheck[el.id]}>
+                          <div
+                            className="collapse-text"
+                            id="example-collapse-text"
+                          >
+                            {el.content}
                           </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openFirstCheck}>
-                        <div
-                          className="collapse-text collapse-text-bottom"
-                          id="example-collapse-text"
-                        >
-                          At this point, you have a problem you want to
-                          understand from the user&apos;s shoes and outside of
-                          the user&apos;s shoe . You want to analyze and
-                          synthesize your research findings/insight to come up
-                          with an informed data and metrics to design for the
-                          new product . The outcome here will inform your
-                          remaining processes
-                        </div>
-                      </Collapse>
+                        </Collapse>
+                      </div>
                     </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenSecondCheck(!openSecondCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openSecondCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Synthesize your research findings
-                            </div>
-                          </div>
-                          <div>
-                            {openSecondCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openSecondCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          What was the key intelligence you seek from the user?
-                          Use them in clusters/categories You could explore
-                          affinity diagraming to identify trends and patterns .
-                          For example; use global tags (for clusters/categories)
-                          as follows: goal, need, motivation, painpoint, task,
-                          tools
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenThirdCheck(!openThirdCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openThirdCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Have a debriefing session with yourself or(and)
-                              your team
-                            </div>
-                          </div>
-                          <div>
-                            {openThirdCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openThirdCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          This will help bring to light the valuable insights
-                          you must have missed Get/uncover other ideas .
-                          Identify feasibility issues and way forward Agree on a
-                          direction to take
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
+                  ))}
                 </Form>
 
                 <div className="next-wrapper mt-md-5">
@@ -264,10 +248,10 @@ export default function DefineProblemLayout() {
             <div className="mb-5">
               <FootNote />
             </div>
-            <FooterNav />
           </div>
         </div>
       </div>
+      <FooterNav />
     </StyledDefinedProblem>
   );
 }

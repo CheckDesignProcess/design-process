@@ -7,14 +7,17 @@ export const StyledTestSolution = styled.div`
   height: auto;
 
   main {
+    width: 600px;
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 240px;
     margin-bottom: 100px;
     position: relative;
     @media ${device.tablet} {
       width: auto;
-      margin-top: 76px;
+      margin-top: 140px;
       margin-bottom: 48px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
     header {
       .title {
@@ -32,12 +35,14 @@ export const StyledTestSolution = styled.div`
       .product {
         color: #bdbdbd;
         font-weight: 600;
-        font-size: 48px;
+        font-size: 42px;
         font-family: AvenirHeavy;
+        line-height: 56px;
         @media ${device.tablet} {
           font-size: 24px;
           margin-top: 28px;
           margin-bottom: 4px;
+          line-height: 36px;
         }
       }
       .takeaway {
@@ -50,11 +55,11 @@ export const StyledTestSolution = styled.div`
       }
       .product-list {
         font-weight: 400;
-        font-size: 22px;
+        font-size: 18px;
         color: #828282;
         font-family: AvenirBook;
         @media ${device.tablet} {
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }
@@ -79,9 +84,9 @@ export const StyledTestSolution = styled.div`
           font-family: AvenirHeavy;
           padding-top: 3px;
           @media ${device.tablet} {
-            font-size: 14px;
+            font-size: 16px;
             line-height: 17px;
-            width: 68%;
+            width: 100%;
             text-align: left;
           }
         }
@@ -101,8 +106,11 @@ export const StyledTestSolution = styled.div`
         width: 95%;
         padding-bottom: 18px;
         padding-top: 2px;
+        text-align: justify;
         @media ${device.tablet} {
           font-size: 14px;
+          width: 100%;
+          text-align: left;
         }
       }
     }
@@ -155,12 +163,12 @@ export const StyledTestSolution = styled.div`
         .process-title {
           color: #bdbdbd;
           font-weight: 500;
-          font-size: 24px;
+          font-size: 20px;
           padding-top: 3px;
           text-align: left;
-          line-height: 24px;
+          line-height: 26px;
           @media ${device.tablet} {
-            font-size: 18px;
+            font-size: 17px;
             text-align: left;
             line-height: 20px;
           }
@@ -174,25 +182,21 @@ export const StyledTestSolution = styled.div`
         width: 95%;
         padding-top: 2px;
         @media ${device.tablet} {
-          padding-top: 15px;
+          padding-top: 10px;
           font-size: 14px;
           width: 100%;
         }
       }
-      .collapse-text-mobile {
+      .collapse-text-bottom {
         padding-top: 20px;
         @media ${device.tablet} {
-          padding-top: 28px;
+          padding-top: 18px;
         }
-      }
-      .collapse-text-bottom {
-        border-bottom: 0.5px solid #2b2b2b;
-        padding-bottom: 18px;
       }
     }
     .progress {
       background-color: #565656;
-      height: 1px;
+      height: 1.5px;
       @media ${device.tablet} {
         height: 1px;
       }
@@ -225,6 +229,18 @@ export const StyledTestSolution = styled.div`
         @media ${device.tablet} {
           font-size: 14px;
         }
+        span {
+          font-weight: 600;
+          font-size: 18px;
+          color: #393939;
+          font-family: AvenirHeavy;
+          @media ${device.tablet} {
+            font-size: 14px;
+          }
+        }
+        .number-color {
+          color: #ffac32;
+        }
       }
       .question {
         color: #393939;
@@ -237,8 +253,13 @@ export const StyledTestSolution = styled.div`
       }
     }
     .next-wrapper {
+      position: sticky;
+      bottom: 0;
+      z-index: 10;
+      background: #1b1b1b;
       border-top: 1px solid #2b2b2b;
       padding-top: 20px;
+      padding-bottom: 12px;
       @media ${device.tablet} {
         margin-top: 24px;
         padding-top: 12px;
@@ -246,7 +267,7 @@ export const StyledTestSolution = styled.div`
       .next {
         color: #393939;
         font-weight: 600;
-        font-size: 24px;
+        font-size: 18px;
         font-family: AvenirHeavy;
         cursor: pointer;
         @media ${device.tablet} {
@@ -256,7 +277,7 @@ export const StyledTestSolution = styled.div`
       .note {
         color: #bdbdbd;
         font-weight: 600;
-        font-size: 24px;
+        font-size: 20px;
         font-family: AvenirHeavy;
         @media ${device.tablet} {
           font-size: 14px;

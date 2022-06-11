@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../utils/device";
 
-export const StyledNewProduct = styled.div`
+export const StyledExistingTest = styled.div`
   background: #1b1b1b;
   min-height: 100vh;
   height: auto;
@@ -182,14 +182,16 @@ export const StyledNewProduct = styled.div`
         width: 95%;
         padding-top: 2px;
         @media ${device.tablet} {
-          padding-top: 15px;
+          padding-top: 10px;
           font-size: 14px;
           width: 100%;
         }
       }
       .collapse-text-bottom {
-        border-bottom: 0.5px solid #2b2b2b;
-        padding-bottom: 18px;
+        padding-top: 25px;
+        @media ${device.tablet} {
+          padding-top: 20px;
+        }
       }
     }
     .progress {

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { device } from "../../utils/device";
 
 export const StyledFooter = styled.div`
+  /* padding-left: 0px; */
   footer {
     border-top: 0.5px solid #565656;
     padding-top: 30px;
@@ -10,10 +11,6 @@ export const StyledFooter = styled.div`
       border-top: none;
       padding-top: 30px;
       padding-bottom: 48px;
-    }
-    .container {
-      padding-left: 0px;
-      padding-right: 0px;
     }
     .copyright {
       color: #828282;
@@ -27,7 +24,7 @@ export const StyledFooter = styled.div`
       @media ${device.tablet} {
         border-bottom: 0.5px solid #565656;
         padding-bottom: 10px;
-        justify-content: end;
+        justify-content: center;
       }
       div {
         width: 45px;

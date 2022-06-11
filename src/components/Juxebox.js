@@ -5,13 +5,15 @@ import { device } from "../utils/device";
 const StyledJuxebox = styled.div`
   .juxebox {
     position: absolute;
-    right: -75px;
-    top: -95px;
+    right: -90px;
+    top: -50px;
     @media ${device.tablet} {
       right: 0px;
       top: 4px;
     }
     img {
+      width: 220px !important;
+      height: 247.83px !important;
       @media ${device.tablet} {
         width: 87px !important;
         height: 93px !important;

@@ -10,12 +10,11 @@ import { StyledAbout } from "./styles";
 export default function AboutLayout() {
   return (
     <StyledAbout>
+      <TopNav />
       <div className="container-fluid">
         <div className="row">
           <div className="col-md">
-            <TopNav />
-
-            <main className="col-md-6">
+            <main>
               <header>About</header>
               <div className="page-content">
                 <p>
@@ -72,11 +71,10 @@ export default function AboutLayout() {
                 </p>
               </div>
             </main>
-
-            <FooterNav />
           </div>
         </div>
       </div>
+      <FooterNav />
     </StyledAbout>
   );
 }

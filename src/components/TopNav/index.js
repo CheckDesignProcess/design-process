@@ -25,38 +25,26 @@ export default function TopNav() {
 
   return (
     <StyledNav>
-      <Navbar expand="lg">
-        <Container>
-          <Navbar.Brand href="/">{BrandLogo}</Navbar.Brand>
-          <span className="hamburger-icon" onClick={handleShow}>
-            {HamburgerIcon}
-          </span>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Link href="/">
-                <a className="nav-link mx-md-5">Home</a>
-              </Link>
-              <Link href="/about">
-                <a className="nav-link me-md-5">About</a>
-              </Link>
-              <Link href="/share">
-                <a className="nav-link">Share</a>
-              </Link>
-            </Nav>
-            <div className="d-flex align-items-center">
-              <InputGroup className="">
-                <FormControl
-                  placeholder="Enter your email"
-                  aria-label="Enter your email"
-                  aria-describedby="basic-addon2"
-                />
-                <Button variant="outline-secondary" id="button-addon2">
-                  Get Updates
-                </Button>
-              </InputGroup>
-            </div>
-          </Navbar.Collapse>
-        </Container>
+      <Navbar expand="lg" fixed="top">
+        <Link href="/">
+          <a className="navbar-brand">{BrandLogo}</a>
+        </Link>
+        <span className="hamburger-icon" onClick={handleShow}>
+          {HamburgerIcon}
+        </span>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Link href="/">
+              <a className="nav-link mx-md-4">Home</a>
+            </Link>
+            <Link href="/about">
+              <a className="nav-link me-md-4">About</a>
+            </Link>
+            <Link href="/share">
+              <a className="nav-link">Share</a>
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
 
       <MobileNav show={show} handleClose={handleClose} />

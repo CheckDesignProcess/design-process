@@ -4,6 +4,10 @@ import { device } from "../../utils/device";
 export const StyledFootNote = styled.div`
   .foot-note {
     margin: 0 auto;
+    width: 600px;
+    @media ${device.tablet} {
+      width: auto;
+    }
     .collapse-section {
       background: #24211c;
       padding-left: 15px;

@@ -5,6 +5,7 @@ export const HomeContainer = styled.div`
   background: #1b1b1b;
   min-height: 100vh;
   height: auto;
+
   .progress {
     background-color: #565656;
     height: 0.5px;
@@ -13,41 +14,44 @@ export const HomeContainer = styled.div`
     background-color: #ffac32;
   }
   main {
-    /* width: 824px; */
+    width: 600px;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 200px;
     margin-bottom: 100px;
     @media ${device.tablet} {
       width: auto;
-      margin-top: 48px;
+      margin-top: 140px;
       margin-bottom: 48px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
     header {
-      margin-bottom: 75px;
+      margin-bottom: 80px;
       @media ${device.tablet} {
-        margin-bottom: 58px;
+        margin-bottom: 90px;
       }
       div {
         color: #bdbdbd;
-        font-size: 48px;
+        font-size: 42px;
         font-family: AvenirHeavy;
+        line-height: 52px;
         @media ${device.tablet} {
           font-size: 24px;
-          width: 80%;
-          line-height: 29px;
-          margin-bottom: 25px;
+          width: 100%;
+          line-height: 32px;
+          margin-bottom: 23px;
         }
       }
       p {
         color: #828282;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 29px;
         margin-bottom: 30px;
         width: 96%;
         @media ${device.tablet} {
           font-size: 16px;
-          width: 80%;
-          line-height: 19.2px;
+          width: 100%;
+          line-height: 21px;
         }
       }
       button {
@@ -121,6 +125,7 @@ export const HomeContainer = styled.div`
           font-weight: 400;
           font-size: 18px;
           line-height: 22px;
+          cursor: pointer;
           @media ${device.tablet} {
             font-size: 14px;
           }
@@ -128,7 +133,7 @@ export const HomeContainer = styled.div`
         .number {
           color: #828282;
           font-weight: bolder;
-          font-size: 18px;
+          font-size: 16px;
           @media ${device.tablet} {
             font-size: 14px;
           }

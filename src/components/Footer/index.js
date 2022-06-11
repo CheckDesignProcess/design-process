@@ -12,7 +12,7 @@ export default function FooterNav() {
       <footer>
         <div className="container">
           <div className="row">
-            <div className="col-md">
+            <div className="col-md px-0">
               <div className="d-none d-lg-block">
                 <div className="d-md-flex justify-content-between align-items-center">
                   <div className="copyright">Ⓒ 2021 All Rights Reserved</div>
@@ -24,15 +24,8 @@ export default function FooterNav() {
                       <a href="#link">{LinkedIn}</a>
                     </div>
                     <div>
-                      <a href="#link">{Facebook}</a>
-                    </div>
-                    <div>
                       <a href="#link">{Twitter}</a>
                     </div>
-                  </div>
-                  <div className="policy">
-                    <a href="#link">Privacy Policy</a> |{" "}
-                    <a href="#link">Terms and Conditions</a>
                   </div>
                 </div>
               </div>
@@ -47,18 +40,11 @@ export default function FooterNav() {
                     <a href="#link">{LinkedIn}</a>
                   </div>
                   <div>
-                    <a href="#link">{Facebook}</a>
-                  </div>
-                  <div>
                     <a href="#link">{Twitter}</a>
                   </div>
                 </div>
-                <div className="d-flex justify-content-between align-items-center pt-3">
+                <div className="d-flex justify-content-center align-items-center pt-3">
                   <div className="copyright">Ⓒ 2021 All Rights Reserved</div>
-                  <div className="policy">
-                    <a href="#link">Privacy Policy</a> |{" "}
-                    <a href="#link">Terms and Conditions</a>
-                  </div>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Router from "next/router";
 import { Button, Collapse, ProgressBar } from "react-bootstrap";
 import { Form, Checkbox } from "antd";
@@ -13,12 +13,70 @@ import Juxebox from "../../components/Juxebox";
 import { StyledPrototype } from "./styles";
 import { Bulb, ChevronBottom, ChevronTop } from "../../img/file";
 
+const Questions = [
+  {
+    id: 1,
+    title: "Prototype the UI",
+    content:
+      "A prototype is a draft version of a product that allows you to explore your ideas and show the intention behind a feature or the overall design concept to users before investing time and money into development.",
+  },
+  {
+    id: 2,
+    title:
+      "Design the high fidelity UIs of the product covering the features that completes the product/solution",
+    content: (
+      <div>
+        Produce a number of inexpensive, scaled-down versions of the product or
+        specific features within the product, so they can investigate the
+        problem solutions generated in the previous stage.
+      </div>
+    ),
+  },
+  {
+    id: 3,
+    title: "Prototype the UI using any prototyping (interaction design) tool",
+    content: (
+      <div>
+        The aim is to identify the best possible solution for each of the
+        problems identified during the first three stages . Imagine the most
+        useful, actionable research results possible. What did they tell you?
+        How did you use them?
+      </div>
+    ),
+  },
+];
+
 export default function PrototypeSolutionLayout() {
-  const [openProcess, setOpenProcess] = useState(false);
-  const [openNote, setOpenNote] = useState(false);
+  const [openProcess, setOpenProcess] = useState(true);
+  const [openNote, setOpenNote] = useState(true);
   const [openFirstCheck, setOpenFirstCheck] = useState(false);
   const [openSecondCheck, setOpenSecondCheck] = useState(false);
   const [openThirdCheck, setOpenThirdCheck] = useState(false);
+
+  const [state, setState] = useState(true);
+  const [checkList, setCheckList] = useState([]);
+  const [step, setStep] = useState(0);
+
+  const handleCollapseButton = (id) => {
+    setOpenFirstCheck((prevCheck) => ({ ...prevCheck, [id]: !prevCheck[id] }));
+    setState((prevState) => !prevState);
+  };
+
+  const handleCheckbox = (e, id) => {
+    if (checkList.includes(id)) {
+      const filteredIds = checkList.filter((selectedId) => selectedId !== id);
+      setCheckList(filteredIds);
+    } else {
+      setCheckList([...checkList, id]);
+    }
+  };
+
+  useEffect(() => {
+    if (checkList.length == 0) setStep(0);
+    if (checkList.length == 1) setStep(33.3);
+    if (checkList.length == 2) setStep(66.6);
+    if (checkList.length == 3) setStep(100);
+  }, [checkList.length]);
 
   const handleFirstCheck = (e) => {
     console.log(`checked = ${e.target.checked}`);
@@ -39,7 +97,7 @@ export default function PrototypeSolutionLayout() {
                 <div className="takeaway mb-4">
                   Key takeaways that identify a new product
                 </div>
-                <div className="product-list mb-5">
+                <div className="product-list mb-5 pb-5">
                   <div>
                     - It hasn&apos;t already been built by your product owners
                   </div>
@@ -47,9 +105,8 @@ export default function PrototypeSolutionLayout() {
                 </div>
                 <div className="collapse-section">
                   <Button
-                    onClick={() => setOpenProcess(!openProcess)}
+                    // onClick={() => setOpenProcess(!openProcess)}
                     aria-controls="example-collapse-text"
-                    aria-expanded={openProcess}
                   >
                     <div className="d-flex align-items-center justify-content-between">
                       <div className="d-flex align-items-center">
@@ -58,7 +115,7 @@ export default function PrototypeSolutionLayout() {
                           Processes to design a new product
                         </div>
                       </div>
-                      <div>{openProcess ? ChevronTop : ChevronBottom}</div>
+                      {/* <div>{openProcess ? ChevronTop : ChevronBottom}</div> */}
                     </div>
                   </Button>
                   <Collapse in={openProcess}>
@@ -85,12 +142,17 @@ export default function PrototypeSolutionLayout() {
                   4. Prototype the Solution (New Product)
                 </div>
 
-                <div className="number mb-2">0 out of 3</div>
-                <ProgressBar now={16.6} />
+                <div className="number mb-2">
+                  <span className={checkList.length > 0 && "number-color"}>
+                    {checkList.length}
+                  </span>{" "}
+                  out of 3
+                </div>
+                <ProgressBar now={step} />
                 <div className="question mt-3 mb-4">What you need to do</div>
                 <div className="collapse-section">
                   <Button
-                    onClick={() => setOpenNote(!openNote)}
+                    // onClick={() => setOpenNote(!openNote)}
                     aria-controls="example-collapse-text"
                     aria-expanded={openNote}
                   >
@@ -101,7 +163,7 @@ export default function PrototypeSolutionLayout() {
                           Quick Note
                         </div>
                       </div>
-                      <div>{openNote ? ChevronTop : ChevronBottom}</div>
+                      {/* <div>{openNote ? ChevronTop : ChevronBottom}</div> */}
                     </div>
                   </Button>
                   <Collapse in={openNote}>
@@ -114,125 +176,51 @@ export default function PrototypeSolutionLayout() {
                     </div>
                   </Collapse>
                 </div>
+
                 <Form className="mt-md-5 pt-md-3">
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenFirstCheck(!openFirstCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openFirstCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Prototype the UI
+                  {Questions.map((el) => (
+                    <div
+                      key={el.id}
+                      className="d-flex align-items-center check-box-pointer"
+                      style={{ position: "relative" }}
+                    >
+                      <div className="check-wrapper">
+                        <Checkbox
+                          onChange={(e) => handleCheckbox(e, el.id)}
+                          checked={checkList.includes(el.id)}
+                        ></Checkbox>
+                      </div>
+                      <div className="collapse-form-section">
+                        <Button
+                          onClick={() => handleCollapseButton(el.id)}
+                          aria-controls="example-collapse-text"
+                        >
+                          <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
+                            <div className="d-flex align-items-center">
+                              <div className="process-title">{el.title}</div>
+                            </div>
+                            <div>
+                              {openFirstCheck[el.id]
+                                ? ChevronTop
+                                : ChevronBottom}
                             </div>
                           </div>
-                          <div>
-                            {openFirstCheck ? ChevronTop : ChevronBottom}
+                        </Button>
+                        <Collapse in={openFirstCheck[el.id]}>
+                          <div
+                            className={
+                              el.id == 2 || el.id == 3
+                                ? "collapse-text collapse-text-bottom"
+                                : "collapse-text"
+                            }
+                            id="example-collapse-text"
+                          >
+                            {el.content}
                           </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openFirstCheck}>
-                        <div
-                          className="collapse-text collapse-text-bottom"
-                          id="example-collapse-text"
-                        >
-                          A prototype is a draft version of a product that
-                          allows you to explore your ideas and show the
-                          intention behind a feature or the overall design
-                          concept to users before investing time and money into
-                          development.
-                        </div>
-                      </Collapse>
+                        </Collapse>
+                      </div>
                     </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenSecondCheck(!openSecondCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openSecondCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Design the high fidelity UIs of the product
-                              covering the features that completes the
-                              product/solution
-                            </div>
-                          </div>
-                          <div>
-                            {openSecondCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openSecondCheck}>
-                        <div
-                          className="collapse-text collapse-text-mobile"
-                          id="example-collapse-text"
-                        >
-                          Produce a number of inexpensive, scaled-down versions
-                          of the product or specific features within the
-                          product, so they can investigate the problem solutions
-                          generated in the previous stage.
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenThirdCheck(!openThirdCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openThirdCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Prototype the UI using any prototyping
-                              (interaction design) tool
-                            </div>
-                          </div>
-                          <div>
-                            {openThirdCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openThirdCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          The aim is to identify the best possible solution for
-                          each of the problems identified during the first three
-                          stages . Imagine the most useful, actionable research
-                          results possible. What did they tell you? How did you
-                          use them?
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
+                  ))}
                 </Form>
 
                 <div className="next-wrapper mt-md-5">
@@ -260,10 +248,10 @@ export default function PrototypeSolutionLayout() {
             <div className="mb-5">
               <FootNote />
             </div>
-            <FooterNav />
           </div>
         </div>
       </div>
+      <FooterNav />
     </StyledPrototype>
   );
 }

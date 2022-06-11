@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Router from "next/router";
 import { Button, Collapse, ProgressBar } from "react-bootstrap";
 import { Form, Checkbox } from "antd";
@@ -13,15 +13,90 @@ import Juxebox from "../../components/Juxebox";
 import { StyledTestSolution } from "./styles";
 import { Bulb, ChevronBottom, ChevronTop } from "../../img/file";
 
+const Questions = [
+  {
+    id: "1",
+    title: "Test the product, iterate and refine",
+    content: (
+      <div>
+        The solutions are implemented within the prototypes, and, one by one,
+        they are investigated and either accepted, improved, and re-examined or
+        rejected on the basis of the users&apos; experiences.
+      </div>
+    ),
+  },
+  {
+    id: "2",
+    title: "Test the prototype interaction internally",
+    content:
+      "Have yourself/team use the prototype to uncover design/functionality issues",
+  },
+  {
+    id: "3",
+    title:
+      "Test the prototype interaction with the target users/representative users",
+    content:
+      "Have the target users/representative users use the prototype to get their feedback and ensure the solution sits well with the target users.",
+  },
+  {
+    id: "4",
+    title:
+      "Refine the product to address all the feedback gotten from the previous step",
+    content:
+      "Use the feedback gotten from the target users to improve the UX and UI of the product and test again if the solution is optimally improved.",
+  },
+  {
+    id: "5",
+    title: "Hand-off",
+    content: (
+      <div>
+        Prepare the developer handoff
+        <br />
+        Make assets accessible.
+        <br />
+        Create a style guide or components library for developers.
+      </div>
+    ),
+  },
+  {
+    id: "6",
+    title: "Keep iterating",
+    content:
+      "UX is never complete, at intervals, carry out benchmark studies to uncover new trends /feedback from the customers after the product launch.",
+  },
+];
+
 export default function TestSolutionLayout() {
-  const [openProcess, setOpenProcess] = useState(false);
-  const [openNote, setOpenNote] = useState(false);
+  const [openProcess, setOpenProcess] = useState(true);
+  const [openNote, setOpenNote] = useState(true);
   const [openFirstCheck, setOpenFirstCheck] = useState(false);
-  const [openSecondCheck, setOpenSecondCheck] = useState(false);
-  const [openThirdCheck, setOpenThirdCheck] = useState(false);
-  const [openFourthCheck, setOpenFourthCheck] = useState(false);
-  const [openFifthCheck, setOpenFifthCheck] = useState(false);
-  const [openSixthCheck, setOpenSixthCheck] = useState(false);
+  const [state, setState] = useState(true);
+  const [checkList, setCheckList] = useState([]);
+  const [step, setStep] = useState(0);
+
+  const handleCollapseButton = (id) => {
+    setOpenFirstCheck((prevCheck) => ({ ...prevCheck, [id]: !prevCheck[id] }));
+    setState((prevState) => !prevState);
+  };
+
+  const handleCheckbox = (e, id) => {
+    if (checkList.includes(id)) {
+      const filteredIds = checkList.filter((selectedId) => selectedId !== id);
+      setCheckList(filteredIds);
+    } else {
+      setCheckList([...checkList, id]);
+    }
+  };
+
+  useEffect(() => {
+    if (checkList.length == 0) setStep(0);
+    if (checkList.length == 1) setStep(16.6);
+    if (checkList.length == 2) setStep(33.2);
+    if (checkList.length == 3) setStep(49.8);
+    if (checkList.length == 4) setStep(66.4);
+    if (checkList.length == 5) setStep(83);
+    if (checkList.length == 6) setStep(100);
+  }, [checkList.length]);
 
   const handleFirstCheck = (e) => {
     console.log(`checked = ${e.target.checked}`);
@@ -42,7 +117,7 @@ export default function TestSolutionLayout() {
                 <div className="takeaway mb-4">
                   Key takeaways that identify a new product
                 </div>
-                <div className="product-list mb-5">
+                <div className="product-list mb-5 pb-5">
                   <div>
                     - It hasn&apos;t already been built by your product owners
                   </div>
@@ -50,9 +125,8 @@ export default function TestSolutionLayout() {
                 </div>
                 <div className="collapse-section">
                   <Button
-                    onClick={() => setOpenProcess(!openProcess)}
+                    // onClick={() => setOpenProcess(!openProcess)}
                     aria-controls="example-collapse-text"
-                    aria-expanded={openProcess}
                   >
                     <div className="d-flex align-items-center justify-content-between">
                       <div className="d-flex align-items-center">
@@ -61,7 +135,7 @@ export default function TestSolutionLayout() {
                           Processes to design a new product
                         </div>
                       </div>
-                      <div>{openProcess ? ChevronTop : ChevronBottom}</div>
+                      {/* <div>{openProcess ? ChevronTop : ChevronBottom}</div> */}
                     </div>
                   </Button>
                   <Collapse in={openProcess}>
@@ -88,14 +162,18 @@ export default function TestSolutionLayout() {
                   5. Test the Solution (New Product)
                 </div>
 
-                <div className="number mb-2">1 out of 6</div>
-                <ProgressBar now={16.6} />
+                <div className="number mb-2">
+                  <span className={checkList.length > 0 && "number-color"}>
+                    {checkList.length}
+                  </span>{" "}
+                  out of 6
+                </div>
+                <ProgressBar now={step} />
                 <div className="question mt-3 mb-4">What you need to do</div>
                 <div className="collapse-section">
                   <Button
-                    onClick={() => setOpenNote(!openNote)}
+                    // onClick={() => setOpenNote(!openNote)}
                     aria-controls="example-collapse-text"
-                    aria-expanded={openNote}
                   >
                     <div className="d-flex align-items-center justify-content-between">
                       <div className="d-flex align-items-center">
@@ -104,7 +182,7 @@ export default function TestSolutionLayout() {
                           Quick Note
                         </div>
                       </div>
-                      <div>{openNote ? ChevronTop : ChevronBottom}</div>
+                      {/* <div>{openNote ? ChevronTop : ChevronBottom}</div> */}
                     </div>
                   </Button>
                   <Collapse in={openNote}>
@@ -117,229 +195,52 @@ export default function TestSolutionLayout() {
                     </div>
                   </Collapse>
                 </div>
+
                 <Form className="mt-md-5 pt-md-3">
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenFirstCheck(!openFirstCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openFirstCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Test the product, iterate and refine
+                  {Questions.map((el) => (
+                    <div
+                      key={el.id}
+                      className="d-flex align-items-center check-box-pointer"
+                      style={{ position: "relative" }}
+                    >
+                      <div className="check-wrapper">
+                        <Checkbox
+                          onChange={(e) => handleCheckbox(e, el.id)}
+                          checked={checkList.includes(el.id)}
+                        ></Checkbox>
+                      </div>
+                      <div className="collapse-form-section">
+                        <Button
+                          onClick={() => handleCollapseButton(el.id)}
+                          aria-controls="example-collapse-text"
+                          aria-expanded={openFirstCheck}
+                        >
+                          <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
+                            <div className="d-flex align-items-center">
+                              <div className="process-title">{el.title}</div>
+                            </div>
+                            <div>
+                              {openFirstCheck[el.id]
+                                ? ChevronTop
+                                : ChevronBottom}
                             </div>
                           </div>
-                          <div>
-                            {openFirstCheck ? ChevronTop : ChevronBottom}
+                        </Button>
+                        <Collapse in={openFirstCheck[el.id]}>
+                          <div
+                            className={
+                              el.id == 3 || el.id == 4
+                                ? "collapse-text collapse-text-bottom"
+                                : "collapse-text"
+                            }
+                            id="example-collapse-text"
+                          >
+                            {el.content}
                           </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openFirstCheck}>
-                        <div
-                          className="collapse-text collapse-text-bottom"
-                          id="example-collapse-text"
-                        >
-                          The solutions are implemented within the prototypes,
-                          and, one by one, they are investigated and either
-                          accepted, improved, and re-examined or rejected on the
-                          basis of the users&apos; experiences.
-                        </div>
-                      </Collapse>
+                        </Collapse>
+                      </div>
                     </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenSecondCheck(!openSecondCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openSecondCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Test the prototype interaction internally
-                            </div>
-                          </div>
-                          <div>
-                            {openSecondCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openSecondCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          Have yourself/team use the prototype to uncover
-                          design/functionality issues
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenThirdCheck(!openThirdCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openThirdCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Test the prototype interaction with the target
-                              users/representative users
-                            </div>
-                          </div>
-                          <div>
-                            {openThirdCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openThirdCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          Have the target users/representative users use the
-                          prototype to get their feedback and ensure the
-                          solution sits well with the target users.
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenFourthCheck(!openFourthCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openFourthCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">
-                              Refine the product to address all the feedback
-                              gotten from the previous step
-                            </div>
-                          </div>
-                          <div>
-                            {openFourthCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openFourthCheck}>
-                        <div
-                          className="collapse-text collapse-text-mobile"
-                          id="example-collapse-text"
-                        >
-                          Use the feedback gotten from the target users to
-                          improve the UX and UI of the product and test again if
-                          the solution is optimally improved.
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-flex align-items-center check-box-pointer"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenFifthCheck(!openFifthCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openFifthCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">Hand-off</div>
-                          </div>
-                          <div>
-                            {openFifthCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openFifthCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          Prepare the developer handoff
-                          <br />
-                          Make assets accessible.
-                          <br />
-                          Create a style guide or components library for
-                          developers.
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
-
-                  <div
-                    className="d-md-flex align-items-center check-box-pointer check-box-pointer-mobile"
-                    style={{ position: "relative" }}
-                  >
-                    <div className="check-wrapper">
-                      <Checkbox onChange={handleFirstCheck}></Checkbox>
-                    </div>
-                    <div className="collapse-form-section">
-                      <Button
-                        onClick={() => setOpenSixthCheck(!openSixthCheck)}
-                        aria-controls="example-collapse-text"
-                        aria-expanded={openSixthCheck}
-                      >
-                        <div className="d-flex align-items-center justify-content-between process-wrapper-mobile">
-                          <div className="d-flex align-items-center">
-                            <div className="process-title">Keep iterating</div>
-                          </div>
-                          <div>
-                            {openSixthCheck ? ChevronTop : ChevronBottom}
-                          </div>
-                        </div>
-                      </Button>
-                      <Collapse in={openSixthCheck}>
-                        <div
-                          className="collapse-text"
-                          id="example-collapse-text"
-                        >
-                          UX is never complete, at intervals, carry out
-                          benchmark studies to uncover new trends /feedback from
-                          the customers after the product launch.
-                        </div>
-                      </Collapse>
-                    </div>
-                  </div>
+                  ))}
                 </Form>
 
                 <div className="next-wrapper mt-md-5">
@@ -363,10 +264,10 @@ export default function TestSolutionLayout() {
             <div className="mb-5">
               <FootNote />
             </div>
-            <FooterNav />
           </div>
         </div>
       </div>
+      <FooterNav />
     </StyledTestSolution>
   );
 }

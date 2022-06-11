@@ -6,14 +6,14 @@ import { StyledFootNote } from "./styles";
 import { Flag, ChevronBottom, ChevronTop } from "../../img/file";
 
 export default function FootNote() {
-  const [openProcess, setOpenProcess] = useState(false);
+  const [openProcess, setOpenProcess] = useState(true);
 
   return (
     <StyledFootNote>
-      <div className="foot-note col-md-10">
+      <div className="foot-note">
         <div className="collapse-section">
           <Button
-            onClick={() => setOpenProcess(!openProcess)}
+            // onClick={() => setOpenProcess(!openProcess)}
             aria-controls="example-collapse-text"
             aria-expanded={openProcess}
           >
@@ -27,7 +27,7 @@ export default function FootNote() {
                   Resources
                 </div>
               </div>
-              <div>{openProcess ? ChevronTop : ChevronBottom}</div>
+              {/* <div>{openProcess ? ChevronTop : ChevronBottom}</div> */}
             </div>
           </Button>
           <Collapse in={openProcess}>
