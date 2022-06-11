@@ -18,7 +18,7 @@ export default function AboutLayout() {
               <header>About</header>
               <div className="page-content">
                 <p>
-                  Hi there, we are{" "}
+                  I am{" "}
                   <a
                     href="https://www.linkedin.com/in/%F0%9F%8C%8D%F0%9F%A5%87olamilekan-adeyemi-654249135/"
                     target="_blank"
@@ -26,21 +26,9 @@ export default function AboutLayout() {
                   >
                     Olamilekan Adeyemi
                   </a>
-                  ,{" "}
-                  <a
-                    href="https://www.linkedin.com/in/ummiux/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Fatima Ummi Abdulkadir{" "}
-                  </a>
-                  and other <a href="#link">top-level Product Designers.</a>
-                </p>
-                <p>
-                  We&apos;ve been working as Product Designers for quite a while
-                  now, and we&apos;ve been able to resonate with the key
-                  challenges people face in understanding product design
-                  processes.
+                  , I have been working as Product Designer for quite a while
+                  now, and I have been able to resonate with the key challenges
+                  people face in understanding product design processes.
                 </p>
                 <p>
                   Not only that, but oftentimes Product Designers also
@@ -52,7 +40,7 @@ export default function AboutLayout() {
                   product design solutions in the world.
                 </p>
                 <p>
-                  So, we created this checklist compared to the high-level
+                  So, I created this checklist compared to the high-level
                   problem space that most product problems are tailored to and
                   curated a holistic product design process for you and the
                   everyday person to approach problem-solving in a systematic
@@ -63,6 +51,45 @@ export default function AboutLayout() {
                   it is a set of recommendations for you to keep track of
                   everything you&apos;ll want to check off to provide a solid
                   product design solution with the right user experience.
+                </p>
+                <p>
+                  Thanks to{" "}
+                  <a
+                    href="https://www.linkedin.com/in/olanshile-salami-2a6a0a128"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Shile
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://www.linkedin.com/in/praizux"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Praiz
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://www.linkedin.com/in/ummiux"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Fatima
+                  </a>
+                  ,{" "}
+                  <a
+                    href="https://www.linkedin.com/in/haruna-ahmadu-0a9991153/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Haruna
+                  </a>
+                  , and{" "}
+                  <a href="#link" target="_blank" rel="noreferrer">
+                    Joshua
+                  </a>{" "}
+                  and everyone who gave their awesome feedback on this mvp.
                 </p>
                 <p>
                   Everything you see here is open source. If you&apos;d like to

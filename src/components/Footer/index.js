@@ -18,13 +18,31 @@ export default function FooterNav() {
                   <div className="copyright">Ⓒ 2021 All Rights Reserved</div>
                   <div className="social-icon d-flex align-items-center">
                     <div>
-                      <a href="#link">{Instagram}</a>
+                      <a
+                        href="https://www.instagram.com/holargrapher/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {Instagram}
+                      </a>
                     </div>
                     <div>
-                      <a href="#link">{LinkedIn}</a>
+                      <a
+                        href="https://www.linkedin.com/in/%F0%9F%8C%8D%F0%9F%A5%87olamilekan-adeyemi-654249135/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {LinkedIn}
+                      </a>
                     </div>
                     <div>
-                      <a href="#link">{Twitter}</a>
+                      <a
+                        href="https://twitter.com/holargrapher"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {Twitter}
+                      </a>
                     </div>
                   </div>
                 </div>
