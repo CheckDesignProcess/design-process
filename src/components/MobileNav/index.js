@@ -14,7 +14,7 @@ export default function MobileNav({ show, handleClose }) {
           <div className="brand-logo">{BrandLogo}</div>
           <div onClick={handleClose}>{CloseImage}</div>
         </div>
-        <div className="nav-links-wrapper">
+        <div className="nav-links-wrapper text-center">
           <div>
             <Link href="/">
               <a>Home</a>

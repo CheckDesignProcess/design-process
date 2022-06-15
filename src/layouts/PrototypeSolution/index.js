@@ -86,10 +86,10 @@ export default function PrototypeSolutionLayout() {
     <StyledPrototype>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md">
+          <div className="col-md px-md-0">
             <TopNav />
 
-            <main className="col-md-7">
+            <main>
               <Juxebox />
               <header className="mb-5">
                 <div className="title mb-3">What are you designing for?</div>
@@ -222,28 +222,30 @@ export default function PrototypeSolutionLayout() {
                     </div>
                   ))}
                 </Form>
-
-                <div className="next-wrapper mt-md-5">
-                  <div className="d-flex justify-content-between">
-                    <div
-                      className="next"
-                      onClick={() => Router.push("/ideate-solution")}
-                    >
-                      Previous
-                    </div>
-                    <div
-                      className="next"
-                      onClick={() => Router.push("/test-solution")}
-                    >
-                      Next
-                    </div>
-                  </div>
-                  <div className="text-end">
-                    <div className="note">Test the Solution (New Product)</div>
-                  </div>
-                </div>
               </div>
             </main>
+
+            <div className="next-container">
+              <div className="next-wrapper">
+                <div className="d-flex justify-content-between">
+                  <div
+                    className="next"
+                    onClick={() => Router.push("/ideate-solution")}
+                  >
+                    Previous
+                  </div>
+                  <div
+                    className="next"
+                    onClick={() => Router.push("/test-solution")}
+                  >
+                    Next
+                  </div>
+                </div>
+                <div className="text-end">
+                  <div className="note">Test the Solution (New Product)</div>
+                </div>
+              </div>
+            </div>
 
             <div className="mb-5">
               <FootNote />

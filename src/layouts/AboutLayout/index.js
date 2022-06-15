@@ -86,7 +86,11 @@ export default function AboutLayout() {
                     Haruna
                   </a>
                   , and{" "}
-                  <a href="#link" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://twitter.com/josh_owolabi"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Joshua
                   </a>{" "}
                   and everyone who gave their awesome feedback on this mvp.

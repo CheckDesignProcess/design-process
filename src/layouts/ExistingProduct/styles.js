@@ -10,12 +10,12 @@ export const StyledExistingProduct = styled.div`
     width: 600px;
     margin: 0 auto;
     margin-top: 240px;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
     position: relative;
     @media ${device.tablet} {
       width: auto;
       margin-top: 140px;
-      margin-bottom: 48px;
+      margin-bottom: 0px;
       padding-left: 10px;
       padding-right: 10px;
     }
@@ -250,17 +250,28 @@ export const StyledExistingProduct = styled.div`
         }
       }
     }
+  }
+
+  .next-container {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    background: #1b1b1b;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 12px;
+    border-top: 1px solid #2b2b2b;
+    margin-bottom: 120px;
+    @media ${device.tablet} {
+      padding-top: 12px;
+      padding-bottom: 50px;
+      margin-bottom: 0px;
+    }
     .next-wrapper {
-      position: sticky;
-      bottom: 0;
-      z-index: 10;
-      background: #1b1b1b;
-      border-top: 1px solid #2b2b2b;
-      padding-top: 20px;
-      padding-bottom: 12px;
+      width: 600px;
       @media ${device.tablet} {
-        margin-top: 24px;
-        padding-top: 12px;
+        width: 100%;
       }
       .next {
         color: #393939;

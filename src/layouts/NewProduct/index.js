@@ -125,7 +125,7 @@ export default function NewProduct() {
       <TopNav />
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md">
+          <div className="col-md px-md-0">
             <main>
               <Juxebox />
               <header className="mb-5">
@@ -260,24 +260,26 @@ export default function NewProduct() {
                     </div>
                   ))}
                 </Form>
+              </div>
+            </main>
 
-                <div className="next-wrapper mt-md-5">
-                  <div className="d-flex justify-content-end">
-                    <div
-                      className="next"
-                      onClick={() => Router.push("/define-problem")}
-                    >
-                      Next
-                    </div>
+            <div className="next-container">
+              <div className="next-wrapper">
+                <div className="text-end">
+                  <div
+                    className="next"
+                    onClick={() => Router.push("/define-problem")}
+                  >
+                    Next
                   </div>
-                  <div className="text-end">
-                    <div className="note">
-                      Define the problem (the need for the New Product)
-                    </div>
+                </div>
+                <div className="text-end">
+                  <div className="note">
+                    Define the problem (the need for the New Product)
                   </div>
                 </div>
               </div>
-            </main>
+            </div>
 
             <div className="mb-5">
               <FootNote />

@@ -22,7 +22,7 @@ export const StyledMobileNav = styled.div`
     margin-top: 100px;
     a {
       font-weight: 400;
-      font-size: 16px;
+      font-size: 18px;
       color: #f7f7f7;
     }
   }
