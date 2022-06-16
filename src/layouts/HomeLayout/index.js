@@ -18,10 +18,12 @@ export default function HomeLayout() {
           <div className="col-md">
             <main>
               <header>
-                <div className="mb-md-3">Product Design Process Checklist</div>
+                <div className="mb-md-3">
+                  Great design process births <span>useable</span> product
+                </div>
                 <p>
-                  A holistic curation of product design processes for your every
-                  day product building and process validation.
+                  Checkdp helps teams validate design process and build better
+                  products.
                 </p>
                 <Button onClick={() => Router.push("/new-product")}>
                   Get Started
@@ -38,7 +40,7 @@ export default function HomeLayout() {
                     A holistic curation of product design processes for your
                     every day product building and process validation
                   </div>
-                  <div className="number">0 out of 05</div>
+                  <div className="number">0 out of 27</div>
                 </div>
                 <div
                   className="product product-border-bottom"
@@ -49,7 +51,7 @@ export default function HomeLayout() {
                     A holistic curation of product design processes for your
                     every day product building and process validation
                   </div>
-                  <div className="number">0 out of 05</div>
+                  <div className="number">0 out of 25</div>
                 </div>
                 <div className="product product-border-bottom">
                   <div className="head-gray mb-2">

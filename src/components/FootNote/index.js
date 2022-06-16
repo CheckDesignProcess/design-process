@@ -10,7 +10,7 @@ export default function FootNote() {
 
   return (
     <StyledFootNote>
-      <div className="foot-note">
+      <div className="foot-note d-none">
         <div className="collapse-section">
           <Button
             // onClick={() => setOpenProcess(!openProcess)}

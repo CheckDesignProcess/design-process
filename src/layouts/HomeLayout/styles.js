@@ -33,7 +33,7 @@ export const HomeContainer = styled.div`
       div {
         color: #bdbdbd;
         font-size: 42px;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         line-height: 52px;
         @media ${device.tablet} {
           font-size: 24px;
@@ -61,7 +61,7 @@ export const HomeContainer = styled.div`
         width: 139px;
         height: 52px;
         color: #f7f7f7;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         font-size: 16px;
         background: inherit !important;
       }
@@ -69,9 +69,9 @@ export const HomeContainer = styled.div`
     .page-content {
       .title {
         color: #ffac32;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 18px;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         border-bottom: 0.5px solid #565656;
         line-height: 46px;
         @media ${device.tablet} {
@@ -86,8 +86,8 @@ export const HomeContainer = styled.div`
         padding: 20px 0px;
         .head {
           color: #e0e0e0;
-          font-weight: 600;
-          font-family: AvenirHeavy;
+          font-weight: 500;
+          font-family: AvenirBook;
           font-size: 24px;
           cursor: pointer;
           @media ${device.tablet} {
@@ -96,8 +96,8 @@ export const HomeContainer = styled.div`
         }
         .head-gray {
           color: #828282;
-          font-weight: 600;
-          font-family: AvenirHeavy;
+          font-weight: 500;
+          font-family: AvenirBook;
           font-size: 24px;
           display: flex;
           align-items: center;
@@ -110,8 +110,8 @@ export const HomeContainer = styled.div`
             background: rgba(255, 172, 50, 0.08) !important;
             border-radius: 8px;
             color: #ffac32;
-            font-weight: 600;
-            font-family: AvenirHeavy;
+            font-weight: 500;
+            font-family: AvenirBook;
             font-size: 12px;
             display: flex;
             align-items: center;
@@ -122,7 +122,7 @@ export const HomeContainer = styled.div`
         }
         .content {
           color: #828282;
-          font-weight: 400;
+          font-weight: 500;
           font-size: 18px;
           line-height: 22px;
           cursor: pointer;

@@ -27,7 +27,7 @@ export default function TopNav() {
     <StyledNav>
       <Navbar expand="lg" fixed="top">
         <Link href="/">
-          <a className="navbar-brand">{BrandLogo}</a>
+          <a className="navbar-brand">Checkdp</a>
         </Link>
         <span className="hamburger-icon" onClick={handleShow}>
           {HamburgerIcon}
@@ -41,7 +41,10 @@ export default function TopNav() {
               <a className="nav-link me-md-4">About</a>
             </Link>
             <Link href="/share">
-              <a className="nav-link">Share</a>
+              <a className="nav-link me-md-4">Share</a>
+            </Link>
+            <Link href="#link">
+              <a className="nav-link">Contribute</a>
             </Link>
           </Nav>
         </Navbar.Collapse>

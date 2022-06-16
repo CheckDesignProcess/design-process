@@ -22,9 +22,9 @@ export const StyledExistingProduct = styled.div`
     header {
       .title {
         color: #ffac32;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 18px;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         border-bottom: 0.5px solid #565656;
         line-height: 46px;
         @media ${device.tablet} {
@@ -34,9 +34,9 @@ export const StyledExistingProduct = styled.div`
       }
       .product {
         color: #bdbdbd;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 42px;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         line-height: 56px;
         @media ${device.tablet} {
           font-size: 24px;
@@ -46,7 +46,7 @@ export const StyledExistingProduct = styled.div`
         }
       }
       .takeaway {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 24px;
         color: #bdbdbd;
         @media ${device.tablet} {
@@ -54,7 +54,7 @@ export const StyledExistingProduct = styled.div`
         }
       }
       .product-list {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 18px;
         color: #828282;
         font-family: AvenirBook;
@@ -79,9 +79,9 @@ export const StyledExistingProduct = styled.div`
         height: 56px;
         .process-title {
           color: #bdbdbd;
-          font-weight: 600;
+          font-weight: 500;
           font-size: 18px;
-          font-family: AvenirHeavy;
+          font-family: AvenirBook;
           padding-top: 3px;
           @media ${device.tablet} {
             font-size: 16px;
@@ -101,7 +101,7 @@ export const StyledExistingProduct = styled.div`
       }
       .collapse-text {
         color: #828282;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 16px;
         width: 95%;
         padding-bottom: 18px;
@@ -176,7 +176,7 @@ export const StyledExistingProduct = styled.div`
       }
       .collapse-text {
         color: #828282;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 16px;
         line-height: 22px;
         width: 95%;
@@ -205,9 +205,9 @@ export const StyledExistingProduct = styled.div`
     .content-page {
       .gather {
         color: #e0e0e0;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 24px;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         @media ${device.tablet} {
           font-size: 18px;
           margin-top: 70px;
@@ -220,18 +220,18 @@ export const StyledExistingProduct = styled.div`
         }
       }
       .number {
-        font-weight: 600;
+        font-weight: 500;
         font-size: 18px;
         color: #393939;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         @media ${device.tablet} {
           font-size: 14px;
         }
         span {
-          font-weight: 600;
+          font-weight: 500;
           font-size: 18px;
           color: #393939;
-          font-family: AvenirHeavy;
+          font-family: AvenirBook;
           @media ${device.tablet} {
             font-size: 14px;
           }
@@ -242,9 +242,9 @@ export const StyledExistingProduct = styled.div`
       }
       .question {
         color: #393939;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 24px;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         @media ${device.tablet} {
           font-size: 16px;
         }
@@ -275,9 +275,9 @@ export const StyledExistingProduct = styled.div`
       }
       .next {
         color: #393939;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 18px;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         cursor: pointer;
         @media ${device.tablet} {
           font-size: 14px;
@@ -285,9 +285,9 @@ export const StyledExistingProduct = styled.div`
       }
       .note {
         color: #bdbdbd;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 20px;
-        font-family: AvenirHeavy;
+        font-family: AvenirBook;
         @media ${device.tablet} {
           font-size: 14px;
         }

@@ -21,9 +21,9 @@ export const StyledAbout = styled.div`
 
     header {
       color: #bdbdbd;
-      font-weight: 600;
+      font-weight: 500;
       font-size: 42px;
-      font-family: AvenirHeavy;
+      font-family: AvenirBook;
       margin-bottom: 15px;
       @media ${device.tablet} {
         font-size: 24px;
@@ -31,7 +31,7 @@ export const StyledAbout = styled.div`
     }
     .page-content {
       p {
-        font-weight: 400;
+        font-weight: 500;
         font-size: 20px;
         color: #828282;
         font-family: AvenirBook;

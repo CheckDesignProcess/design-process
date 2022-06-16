@@ -24,9 +24,9 @@ export const StyledFootNote = styled.div`
         height: 56px;
         .process-title {
           color: #bdbdbd;
-          font-weight: 600;
+          font-weight: 500;
           font-size: 18px;
-          font-family: AvenirHeavy;
+          font-family: AvenirBook;
           padding-top: 3px;
           @media ${device.tablet} {
             font-size: 14px;
@@ -41,7 +41,7 @@ export const StyledFootNote = styled.div`
       }
       .collapse-text {
         color: #828282;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 16px;
         width: 95%;
         padding-bottom: 18px;

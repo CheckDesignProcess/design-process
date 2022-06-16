@@ -11,7 +11,7 @@ export default function MobileNav({ show, handleClose }) {
     <Offcanvas show={show} onHide={handleClose} placement={"end"}>
       <StyledMobileNav>
         <div className="header d-flex justify-content-between align-items-center">
-          <div className="brand-logo">{BrandLogo}</div>
+          <div className="brand-logo">Checkdp</div>
           <div onClick={handleClose}>{CloseImage}</div>
         </div>
         <div className="nav-links-wrapper text-center">
@@ -25,9 +25,14 @@ export default function MobileNav({ show, handleClose }) {
               <a>About</a>
             </Link>
           </div>
-          <div>
+          <div className="mb-5">
             <Link href="/share">
               <a>Share</a>
+            </Link>
+          </div>
+          <div>
+            <Link href="#link">
+              <a>Contribute</a>
             </Link>
           </div>
         </div>

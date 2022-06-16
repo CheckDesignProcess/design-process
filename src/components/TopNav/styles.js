@@ -11,8 +11,10 @@ export const StyledNav = styled.div`
     padding-left: 36px;
     padding-right: 36px;
     @media ${device.tablet} {
-      padding-left: 10px;
+      padding-left: 25px;
       padding-right: 25px;
+      padding-top: 15px;
+      padding-bottom: 15px;
     }
   }
   nav {
@@ -28,10 +30,9 @@ export const StyledNav = styled.div`
     }
   }
   .navbar-brand {
-    svg {
-      @media ${device.tablet} {
-        width: 220px;
-      }
+    font-size: 24px;
+    @media ${device.tablet} {
+      font-size: 20px;
     }
   }
   .container {
@@ -69,7 +70,7 @@ export const StyledNav = styled.div`
       align-items: center;
       font-weight: bolder;
       font-size: 16px;
-      font-family: AvenirHeavy;
+      font-family: AvenirBook;
       color: #f7f7f7;
       background: #252525;
       border-radius: 8px;
