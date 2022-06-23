@@ -34,19 +34,22 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-YNPLS69455"
-            strategy="afterInteractive"
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=G-YNPLS69455`}
           />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-YNPLS69455');
-        `}
-          </Script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YNPLS69455', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
 
           <script
             dangerouslySetInnerHTML={{

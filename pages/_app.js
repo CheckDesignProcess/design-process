@@ -4,14 +4,25 @@ import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
 import SSRProvider from "react-bootstrap/SSRProvider";
-import ReactGA from "react-ga";
+import { useRouter } from "next/router";
+import * as ga from "../lib/ga";
 
 function MyApp({ Component, pageProps }) {
-  // ReactGA.initialize("G-YNPLS69455");
+  const router = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url);
+    };
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on("routeChangeComplete", handleRouteChange);
 
-  // useEffect(() => {
-  //   ReactGA.pageview(window.location.pathname + window.location.search);
-  // }, []);
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
