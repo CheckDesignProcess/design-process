@@ -18,7 +18,7 @@ const Questions = [
     id: 1,
     title: "Empathize with the target users of the product in question",
     content:
-      "At this point, you want to identify the user's pain points, needs, wants, and the problems that underlie the development of the particular product you are trying to work on.",
+      "At this point, you want to identify the user's pain points, needs, wants, and the problems that underline the development of the particular product you are trying to work on.",
   },
   {
     id: 2,

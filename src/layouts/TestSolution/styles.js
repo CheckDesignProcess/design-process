@@ -276,7 +276,7 @@ export const StyledTestSolution = styled.div`
         width: 100%;
       }
       .next {
-        color: #393939;
+        color: #f7f7f7;
         font-weight: 500;
         font-size: 18px;
         font-family: AvenirBook;
@@ -286,7 +286,7 @@ export const StyledTestSolution = styled.div`
         }
       }
       .note {
-        color: #bdbdbd;
+        color: #828282;
         font-weight: 500;
         font-size: 20px;
         font-family: AvenirBook;

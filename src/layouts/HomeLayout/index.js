@@ -23,7 +23,7 @@ export default function HomeLayout() {
                   Great design process births <span>useable</span> product
                 </div>
                 <p>
-                  Checkdp helps teams validate design process and build better
+                  Checkdp help teams validate design process and build better
                   products.
                 </p>
                 <Link href="/new-product">

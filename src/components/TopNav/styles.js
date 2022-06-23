@@ -30,9 +30,13 @@ export const StyledNav = styled.div`
     }
   }
   .navbar-brand {
-    font-size: 24px;
+    svg {
+      width: 150px;
+    }
     @media ${device.tablet} {
-      font-size: 20px;
+      svg {
+        width: 100px;
+      }
     }
   }
   .container {

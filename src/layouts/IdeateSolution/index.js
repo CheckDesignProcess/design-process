@@ -183,10 +183,9 @@ export default function IdeateSolutionLayout() {
                         the end of designing the product.
                       </div>
                       <div>
-                        These procesesses are better used when one needs to
-                        solve problems that meets their use cases considering
-                        the goal and motivation of the supposed problem in
-                        question.
+                        These processes are better used when one needs to solve
+                        problems that meets their use cases considering the goal
+                        and motivation of the supposed problem in question.
                       </div>
                     </div>
                   </Collapse>

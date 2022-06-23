@@ -27,7 +27,7 @@ export default function TopNav() {
     <StyledNav>
       <Navbar expand="lg" fixed="top">
         <Link href="/">
-          <a className="navbar-brand">Checkdp</a>
+          <a className="navbar-brand">{BrandLogo}</a>
         </Link>
         <span className="hamburger-icon" onClick={handleShow}>
           {HamburgerIcon}

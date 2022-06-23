@@ -18,7 +18,7 @@ const Questions = [
     id: 1,
     title: "Empathize with the target users of the product in question",
     content:
-      "At this point, you want to identify the user's pain points, needs, wants, and the problems that underlie the development of the particular product you are trying to work on.",
+      "At this point, you want to identify the user's pain points, needs, wants, and the problems that underline the development of the particular product you are trying to work on.",
   },
   {
     id: 2,
@@ -165,10 +165,9 @@ export default function NewProduct() {
                         the end of designing the product.
                       </div>
                       <div>
-                        These procesesses are better used when one needs to
-                        solve problems that meets their use cases considering
-                        the goal and motivation of the supposed problem in
-                        question.
+                        These processes are better used when one needs to solve
+                        problems that meets their use cases considering the goal
+                        and motivation of the supposed problem in question.
                       </div>
                     </div>
                   </Collapse>

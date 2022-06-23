@@ -12,8 +12,9 @@ export const StyledMobileNav = styled.div`
   width: 100%;
   .header {
     .brand-logo {
-      font-size: 20px;
-      color: #f7f7f7;
+      svg {
+        width: 100px;
+      }
     }
   }
   .nav-links-wrapper {

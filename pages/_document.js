@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/next-script-for-ga */
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import Script from "next/script";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -72,14 +71,14 @@ export default class MyDocument extends Document {
           <noscript
             dangerouslySetInnerHTML={{
               __html: `
-          <iframe 
-          src="https://www.googletagmanager.com/ns.html?id=GTM-MN6R5LK"
-          height="0" 
-          width="0" 
-          style="display:none;
-          visibility:hidden">
-          </iframe>
-          `,
+                <iframe 
+                src="https://www.googletagmanager.com/ns.html?id=GTM-MN6R5LK"
+                height="0" 
+                width="0" 
+                style="display:none;
+                visibility:hidden">
+                </iframe>
+              `,
             }}
           ></noscript>
           <Main />
