@@ -31,7 +31,7 @@ export default function MobileNav({ show, handleClose }) {
             </Link>
           </div>
           <div>
-            <Link href="#link">
+            <Link href="https://github.com/CheckDesignProcess/design-process">
               <a>Contribute</a>
             </Link>
           </div>

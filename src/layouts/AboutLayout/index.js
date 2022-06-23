@@ -20,7 +20,7 @@ export default function AboutLayout() {
                 <p>
                   I am{" "}
                   <a
-                    href="https://www.linkedin.com/in/%F0%9F%8C%8D%F0%9F%A5%87olamilekan-adeyemi-654249135/"
+                    href="https://www.linkedin.com/in/olamilekan-adeyemi-654249135/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -98,7 +98,14 @@ export default function AboutLayout() {
                 <p>
                   Everything you see here is open source. If you&apos;d like to
                   see added content on this website or if you have feedback,
-                  please contribute <a href="#link">here.</a>
+                  please contribute{" "}
+                  <a
+                    href="https://github.com/CheckDesignProcess/design-process"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    here.
+                  </a>
                 </p>
               </div>
             </main>
