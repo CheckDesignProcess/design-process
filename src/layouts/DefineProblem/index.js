@@ -33,7 +33,7 @@ const Questions = [
     content: (
       <div>
         What was the key intelligence you seek from the user? Use them in
-        clusters/categories You could explore affinity diagraming to identify
+        clusters/categories. You could explore affinity diagraming to identify
         trends and patterns . For example; use global tags (for
         clusters/categories) as follows: goal, need, motivation, painpoint,
         task, tools.
@@ -45,9 +45,9 @@ const Questions = [
     title: "Have a debriefing session with yourself or (and) your team",
     content: (
       <div>
-        This will help bring to light the valuable insights you must have missed
-        Get/uncover other ideas . Identify feasibility issues and way forward
-        Agree on a direction to take.
+        This will help bring to light the valuable insights you must have
+        missed, Get/uncover other ideas, Identify feasibility issues and way
+        forward, Agree on a direction to take.
       </div>
     ),
   },

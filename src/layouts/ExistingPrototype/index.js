@@ -12,6 +12,7 @@ import Juxebox from "../../components/Juxebox";
 //styles and images
 import { StyledExistingPrototype } from "./styles";
 import { Bulb, ChevronBottom, ChevronTop } from "../../img/file";
+import Link from "next/link";
 
 const Questions = [
   {
@@ -228,18 +229,12 @@ export default function ExistingPrototypeLayout() {
             <div className="next-container">
               <div className="next-wrapper">
                 <div className="d-flex justify-content-between">
-                  <div
-                    className="next"
-                    onClick={() => Router.push("/existing-ideate-solution")}
-                  >
-                    Previous
-                  </div>
-                  <div
-                    className="next"
-                    onClick={() => Router.push("/existing-test-solution")}
-                  >
-                    Next
-                  </div>
+                  <Link href="/existing-ideate-solution">
+                    <div className="next">Previous</div>
+                  </Link>
+                  <Link href="/existing-test-solution">
+                    <div className="next">Next</div>
+                  </Link>
                 </div>
                 <div className="text-end">
                   <div className="note">Test the Solution (New Product)</div>

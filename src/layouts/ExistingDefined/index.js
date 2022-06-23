@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Router from "next/router";
+import Link from "next/link";
 import { Button, Collapse, ProgressBar } from "react-bootstrap";
 import { Form, Checkbox } from "antd";
 
@@ -33,7 +33,7 @@ const Questions = [
     content: (
       <div>
         What was the key intelligence you seek from the user? Use them in
-        clusters/categories You could explore affinity diagraming to identify
+        clusters/categories. You could explore affinity diagraming to identify
         trends and patterns . For example; use global tags (for
         clusters/categories) as follows: goal, need, motivation, painpoint,
         task, tools.
@@ -45,9 +45,9 @@ const Questions = [
     title: "Have a debriefing session with yourself or (and) your team",
     content: (
       <div>
-        This will help bring to light the valuable insights you must have missed
-        Get/uncover other ideas . Identify feasibility issues and way forward
-        Agree on a direction to take.
+        This will help bring to light the valuable insights you must have
+        missed, Get/uncover other ideas, Identify feasibility issues and way
+        forward, Agree on a direction to take.
       </div>
     ),
   },
@@ -226,18 +226,12 @@ export default function ExistingDefinedLayout() {
             <div className="next-container">
               <div className="next-wrapper">
                 <div className="d-flex justify-content-between">
-                  <div
-                    className="next"
-                    onClick={() => Router.push("/existing-product")}
-                  >
-                    Previous
-                  </div>
-                  <div
-                    className="next"
-                    onClick={() => Router.push("/existing-ideate-solution")}
-                  >
-                    Next
-                  </div>
+                  <Link href="existing-product">
+                    <div className="next">Previous</div>
+                  </Link>
+                  <Link href="/existing-ideate-solution">
+                    <div className="next">Next</div>
+                  </Link>
                 </div>
                 <div className="text-end">
                   <div className="note">

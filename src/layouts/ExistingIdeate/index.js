@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Router from "next/router";
+import Link from "next/link";
 import { Button, Collapse, ProgressBar } from "react-bootstrap";
 import { Form, Checkbox } from "antd";
 
@@ -266,18 +267,12 @@ export default function ExistingIdeateLayout() {
             <div className="next-container">
               <div className="next-wrapper">
                 <div className="d-flex justify-content-between">
-                  <div
-                    className="next"
-                    onClick={() => Router.push("/existing-define-problem")}
-                  >
-                    Previous
-                  </div>
-                  <div
-                    className="next"
-                    onClick={() => Router.push("/existing-prototype-solution")}
-                  >
-                    Next
-                  </div>
+                  <Link href="/existing-define-problem">
+                    <div className="next">Previous</div>
+                  </Link>
+                  <Link href="/existing-prototype-solution">
+                    <div className="next">Next</div>
+                  </Link>
                 </div>
                 <div className="text-end">
                   <div className="note">

@@ -12,6 +12,7 @@ import Juxebox from "../../components/Juxebox";
 //styles and images
 import { StyledExistingProduct } from "./styles";
 import { Bulb, ChevronBottom, ChevronTop } from "../../img/file";
+import Link from "next/link";
 
 const Questions = [
   {
@@ -268,12 +269,9 @@ export default function ExistingProductLayout() {
             <div className="next-container">
               <div className="next-wrapper">
                 <div className="d-flex justify-content-end">
-                  <div
-                    className="next"
-                    onClick={() => Router.push("/existing-define-problem")}
-                  >
-                    Next
-                  </div>
+                  <Link href="/existing-define-problem">
+                    <div className="next">Next</div>
+                  </Link>
                 </div>
                 <div className="text-end">
                   <div className="note">
