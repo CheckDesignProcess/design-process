@@ -43,7 +43,10 @@ function MyApp({ Component, pageProps }) {
           content="This is an open source project that provides an holistic curation of product design processes for your every day product building and process validation."
           name="description"
         />
-        <meta name="keywords" content="Product, Process, Design" />
+        <meta
+          name="keywords"
+          content="Checkdp, Product, Process, Design, Project, Checklist, New product, Existing product, feature, product building, process validation"
+        />
         <meta name="robots" content="index, follow" />
         <meta content="#1B1B1B" name="theme-color" />
         <meta content="Themesdesign" name="author" />
