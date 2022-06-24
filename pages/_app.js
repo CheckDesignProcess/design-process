@@ -27,7 +27,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Checkdp</title>
+        <title>
+          Checkdp - An opensource checklist for teams to validate design process
+        </title>
         <link
           rel="icon"
           href="https://res.cloudinary.com/syncteams-co/image/upload/v1655999246/Group_14_xwcm47.svg"
