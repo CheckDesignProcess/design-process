@@ -43,11 +43,15 @@ export default function TopNav() {
             <Link href="/share">
               <a className="nav-link me-md-4">Share</a>
             </Link>
-            <Link
-              href="https://github.com/CheckDesignProcess/design-process"
-              target="_blank"
-            >
-              <a className="nav-link">Contribute</a>
+            <Link href="https://github.com/CheckDesignProcess/design-process">
+              <a target="_blank" className="nav-link me-md-4">
+                Contribute
+              </a>
+            </Link>
+            <Link href="https://www.buymeacoffee.com/checkdp">
+              <a target="_blank" className="nav-link">
+                Donate
+              </a>
             </Link>
           </Nav>
         </Navbar.Collapse>

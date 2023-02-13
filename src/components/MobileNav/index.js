@@ -30,9 +30,14 @@ export default function MobileNav({ show, handleClose }) {
               <a>Share</a>
             </Link>
           </div>
-          <div>
+          <div className="mb-5">
             <Link href="https://github.com/CheckDesignProcess/design-process">
               <a>Contribute</a>
+            </Link>
+          </div>
+          <div>
+            <Link href="https://www.buymeacoffee.com/checkdp">
+              <a>Donate</a>
             </Link>
           </div>
         </div>
